@@ -19,10 +19,10 @@ class DataViewController: UIViewController {
             
             if motion == .MotionShake{
                 let vc = UIStoryboard(name: "Main", bundle: nil)
-                    .instantiateViewControllerWithIdentifier("ShakeViewController")
-                    as! ShakeViewController
+                    .instantiateViewControllerWithIdentifier("LoadingController")
+                    as! LoadingController
                 
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.presentViewController(vc, animated: false, completion: nil)
                 
             }
             super.motionEnded(motion, withEvent: event)
