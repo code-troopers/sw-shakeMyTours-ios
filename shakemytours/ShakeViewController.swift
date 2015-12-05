@@ -86,15 +86,11 @@ extension ShakeViewController{
             self.tableData![index.row] = self.loaderService.pickOne()!
             CATransaction.begin()
             CATransaction.setCompletionBlock({
-                self.tableView.reloadData()
-                if let cell = tableView.cellForRowAtIndexPath(indexPath) as? ShakeCellItem{
-                    cell.alpha = 0
-                    cell.fadeIn(0.5)
-                }
+                self.tableView.reloadRowsAtIndexPaths([index], withRowAnimation: .Automatic)
             })
             self.tableView.setEditing(false, animated: true)
             CATransaction.commit()
-            tableView.cellForRowAtIndexPath(indexPath)?.fadeOut()
+         
         }
         return [delete]
     }
