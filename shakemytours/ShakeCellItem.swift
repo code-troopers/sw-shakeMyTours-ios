@@ -30,7 +30,11 @@ class ShakeCellItem : UITableViewCell{
         place.keep = !place.keep
         shakeItem.keepButton.layer.cornerRadius = shakeItem.keepButton.frame.height / 2
         shakeItem.keepButton.layer.borderWidth = 0
-        self.shakeItem.keepButton.layer.backgroundColor = (self.place.keep ? UIColor(hexString:"#40A43F") : UIColor.clearColor()).CGColor
+        self.shakeItem.keepButton.setImage((self.place.keep ?
+            UIImage(named: "check_full") :
+            UIImage(named:"check_empty")
+            ),
+            forState: UIControlState.Normal)
         parent.keepStatusChanged()
     }
     

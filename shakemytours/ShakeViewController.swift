@@ -85,8 +85,6 @@ extension ShakeViewController{
         withEvent event: UIEvent?) {
             
             if motion == .MotionShake{
-//                self.loadData()
-  //              self.refreshTableView()
                 let vc = UIStoryboard(name: "Main", bundle: nil)
                     .instantiateViewControllerWithIdentifier("LoadingController")
                     as! LoadingController

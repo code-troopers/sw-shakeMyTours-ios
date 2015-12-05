@@ -54,5 +54,8 @@ class ShakeItem: CardView{
     func updateView(place : Place){
         self.placeName?.text = place.name
         self.backgroundImage.image = place.image
+        if place.keep{
+            self.keepButton.setImage(UIImage(named: "check_full"), forState: .Normal)
+        }
     }
 }

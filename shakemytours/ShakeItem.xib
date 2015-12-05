@@ -27,17 +27,20 @@
                     <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="0.0" colorSpace="calibratedRGB"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlaceName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TP-gA-CJA">
-                    <rect key="frame" x="58" y="25" width="122" height="30"/>
+                    <rect key="frame" x="73" y="25" width="138.5" height="30"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEC-TT-Rkr">
-                    <rect key="frame" x="20" y="25" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEC-TT-Rkr">
+                    <rect key="frame" x="20" y="17" width="45" height="46"/>
                     <animations/>
-                    <state key="normal" title="✔️">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="1vm-TJ-jyd"/>
+                    </constraints>
+                    <state key="normal" image="check_empty">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
@@ -53,12 +56,15 @@
                 <constraint firstItem="3TP-gA-CJA" firstAttribute="leading" secondItem="iEC-TT-Rkr" secondAttribute="trailing" constant="8" id="Y0B-k8-Qvr"/>
                 <constraint firstItem="SK3-02-YZg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aQQ-a7-dUP"/>
                 <constraint firstAttribute="trailing" secondItem="SK3-02-YZg" secondAttribute="trailing" id="bd2-gu-77U"/>
-                <constraint firstItem="iEC-TT-Rkr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dzG-2x-E2T"/>
                 <constraint firstItem="3TP-gA-CJA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xQX-Rf-lQT"/>
                 <constraint firstItem="iEC-TT-Rkr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="ygB-9L-MG9"/>
+                <constraint firstItem="iEC-TT-Rkr" firstAttribute="centerY" secondItem="3TP-gA-CJA" secondAttribute="centerY" id="zCs-6N-quY"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="check_empty" width="45" height="46"/>
+    </resources>
 </document>
