@@ -72,7 +72,7 @@
                         <viewControllerLayoutGuide type="top" id="Zyy-pe-Pgk"/>
                         <viewControllerLayoutGuide type="bottom" id="erf-bt-5bx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Xoy-Q3-NRf">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Xoy-Q3-NRf">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -88,8 +88,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELk-1O-glh" customClass="ShakeItem" customModule="shakemytours">
-                                                    <rect key="frame" x="0.0" y="4" width="375" height="120"/>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELk-1O-glh" customClass="ShakeItem" customModule="shakemytours">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="120" id="64C-jD-qQ8"/>
@@ -98,7 +98,7 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="ELk-1O-glh" firstAttribute="top" secondItem="g0m-8f-Rvx" secondAttribute="topMargin" constant="-4" id="8sV-hM-8Lx"/>
+                                                <constraint firstItem="ELk-1O-glh" firstAttribute="top" secondItem="g0m-8f-Rvx" secondAttribute="topMargin" constant="-8" id="8sV-hM-8Lx"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ELk-1O-glh" secondAttribute="trailing" constant="-8" id="dOe-cs-OSL"/>
                                                 <constraint firstItem="ELk-1O-glh" firstAttribute="leading" secondItem="g0m-8f-Rvx" secondAttribute="leadingMargin" constant="-8" id="x9T-N4-KeY"/>
                                             </constraints>
