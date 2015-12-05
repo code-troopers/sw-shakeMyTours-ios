@@ -10,10 +10,15 @@
 		7BA076071C124B670070C03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA076061C124B670070C03D /* AppDelegate.swift */; };
 		7BA076091C124B670070C03D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA076081C124B670070C03D /* RootViewController.swift */; };
 		7BA0760B1C124B670070C03D /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0760A1C124B670070C03D /* DataViewController.swift */; };
-		7BA0760D1C124B670070C03D /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0760C1C124B670070C03D /* ModelController.swift */; };
 		7BA076101C124B670070C03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA0760E1C124B670070C03D /* Main.storyboard */; };
 		7BA076121C124B670070C03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BA076111C124B670070C03D /* Assets.xcassets */; };
 		7BA076151C124B670070C03D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA076131C124B670070C03D /* LaunchScreen.storyboard */; };
+		7BA0761D1C1253C30070C03D /* ShakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0761C1C1253C30070C03D /* ShakeViewController.swift */; };
+		7BA0761F1C1257DA0070C03D /* LoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0761E1C1257DA0070C03D /* LoaderService.swift */; };
+		7BA076211C12591E0070C03D /* mockdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BA076201C12591E0070C03D /* mockdata.json */; };
+		7BA076251C125A970070C03D /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA076241C125A970070C03D /* Place.swift */; };
+		7BA076271C125F140070C03D /* ShakeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA076261C125F140070C03D /* ShakeItem.xib */; };
+		7BA076291C125F240070C03D /* ShakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA076281C125F240070C03D /* ShakeItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +26,16 @@
 		7BA076061C124B670070C03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA076081C124B670070C03D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7BA0760A1C124B670070C03D /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		7BA0760C1C124B670070C03D /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		7BA0760F1C124B670070C03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BA076111C124B670070C03D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BA076141C124B670070C03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BA076161C124B670070C03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BA0761C1C1253C30070C03D /* ShakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeViewController.swift; sourceTree = "<group>"; };
+		7BA0761E1C1257DA0070C03D /* LoaderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderService.swift; sourceTree = "<group>"; };
+		7BA076201C12591E0070C03D /* mockdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockdata.json; sourceTree = "<group>"; };
+		7BA076241C125A970070C03D /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		7BA076261C125F140070C03D /* ShakeItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShakeItem.xib; sourceTree = "<group>"; };
+		7BA076281C125F240070C03D /* ShakeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +71,16 @@
 				7BA076061C124B670070C03D /* AppDelegate.swift */,
 				7BA076081C124B670070C03D /* RootViewController.swift */,
 				7BA0760A1C124B670070C03D /* DataViewController.swift */,
-				7BA0760C1C124B670070C03D /* ModelController.swift */,
 				7BA0760E1C124B670070C03D /* Main.storyboard */,
 				7BA076111C124B670070C03D /* Assets.xcassets */,
 				7BA076131C124B670070C03D /* LaunchScreen.storyboard */,
 				7BA076161C124B670070C03D /* Info.plist */,
+				7BA0761C1C1253C30070C03D /* ShakeViewController.swift */,
+				7BA0761E1C1257DA0070C03D /* LoaderService.swift */,
+				7BA076201C12591E0070C03D /* mockdata.json */,
+				7BA076241C125A970070C03D /* Place.swift */,
+				7BA076261C125F140070C03D /* ShakeItem.xib */,
+				7BA076281C125F240070C03D /* ShakeItem.swift */,
 			);
 			path = shakemytours;
 			sourceTree = "<group>";
@@ -128,7 +143,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BA076271C125F140070C03D /* ShakeItem.xib in Resources */,
 				7BA076151C124B670070C03D /* LaunchScreen.storyboard in Resources */,
+				7BA076211C12591E0070C03D /* mockdata.json in Resources */,
 				7BA076121C124B670070C03D /* Assets.xcassets in Resources */,
 				7BA076101C124B670070C03D /* Main.storyboard in Resources */,
 			);
@@ -142,9 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BA076091C124B670070C03D /* RootViewController.swift in Sources */,
-				7BA0760D1C124B670070C03D /* ModelController.swift in Sources */,
+				7BA076291C125F240070C03D /* ShakeItem.swift in Sources */,
+				7BA0761F1C1257DA0070C03D /* LoaderService.swift in Sources */,
 				7BA0760B1C124B670070C03D /* DataViewController.swift in Sources */,
+				7BA076251C125A970070C03D /* Place.swift in Sources */,
 				7BA076071C124B670070C03D /* AppDelegate.swift in Sources */,
+				7BA0761D1C1253C30070C03D /* ShakeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

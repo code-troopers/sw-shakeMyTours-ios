@@ -42,5 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    static func get() -> AppDelegate{
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+    }
+    
 }
 
