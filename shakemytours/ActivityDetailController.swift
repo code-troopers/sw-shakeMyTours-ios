@@ -22,4 +22,18 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData?.count ?? 0
     }
+    
+    @IBAction func shareButtonClick(sender: UIBarButtonItem) {
+        let names = tableData!.map({$0.name!}).joinWithSeparator(" → ")
+        let textToShare = "This is a great shake (\(names)), SHAKE it out !"
+        
+        if let myWebsite = NSURL(string: "http://shakemytours.com/"){
+            let objectsToShare = [textToShare, myWebsite]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+            
+            self.presentViewController(activityVC, animated: true, completion: nil)
+        }
+    }
 }

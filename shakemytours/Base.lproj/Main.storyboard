@@ -76,16 +76,16 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="top" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Cs-8N-4fX">
+                            <tableView clipsSubviews="YES" contentMode="top" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="124" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Cs-8N-4fX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShakeCell" id="BfY-lC-W5K" customClass="ShakeCellItem" customModule="shakemytours" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="375" height="120"/>
+                                        <rect key="frame" x="0.0" y="1" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BfY-lC-W5K" id="g0m-8f-Rvx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELk-1O-glh" customClass="ShakeItem" customModule="shakemytours">
@@ -298,7 +298,7 @@
             </objects>
             <point key="canvasLocation" x="-157" y="-403"/>
         </scene>
-        <!--Activity Detail Controller-->
+        <!--Votre shake-->
         <scene sceneID="o9m-im-VG7">
             <objects>
                 <viewController id="5ce-wt-SuL" customClass="ActivityDetailController" customModule="shakemytours" customModuleProvider="target" sceneMemberID="viewController">
@@ -318,7 +318,7 @@
                                 </constraints>
                             </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LkC-jF-ARH">
-                                <rect key="frame" x="0.0" y="128" width="375" height="475"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="431"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -367,6 +367,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="LkC-jF-ARH" secondAttribute="trailing" constant="-16" id="ys0-Qg-Vwa"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Votre shake" id="ALv-ry-b0U">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="wIh-uS-XUm">
+                            <connections>
+                                <action selector="shareButtonClick:" destination="5ce-wt-SuL" id="NZu-Mk-LZA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="LkC-jF-ARH" id="Ncc-BZ-QS2"/>
                     </connections>
