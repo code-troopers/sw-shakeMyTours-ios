@@ -23,13 +23,12 @@ class ShakeCellItem : UITableViewCell{
         }
 
         shakeItem.keepButton.addTarget(self, action: "keepButtonPressed:", forControlEvents: UIControlEvents.TouchDown)
+        shakeItem.infoBtn.addTarget(self, action: "infoButtonPressed:", forControlEvents: UIControlEvents.TouchDown)
         shakeItem.updateView(place)
     }
     
-    func keepButtonPressed(sender: UIButton){
+    func keepButtonPressed(sender: UIButton?){
         place.keep = !place.keep
-        shakeItem.keepButton.layer.cornerRadius = shakeItem.keepButton.frame.height / 2
-        shakeItem.keepButton.layer.borderWidth = 0
         self.shakeItem.keepButton.setImage((self.place.keep ?
             UIImage(named: "check_full") :
             UIImage(named:"check_empty")
@@ -38,9 +37,14 @@ class ShakeCellItem : UITableViewCell{
         parent.keepStatusChanged()
     }
     
+    func infoButtonPressed(sender: UIButton?){
+        parent.fireSegueWithIdentifier("showDetailsSegue", sender:sender)
+    }
+    
 }
 
 
 protocol KeepStatusListener{
     func keepStatusChanged()
+    func fireSegueWithIdentifier(identifier: String, sender: AnyObject?)
 }

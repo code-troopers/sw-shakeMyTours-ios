@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShakeItem" customModule="shakemytours" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundImage" destination="SK3-02-YZg" id="t2S-t8-5P8"/>
+                <outlet property="infoBtn" destination="gkL-XJ-pyg" id="DWL-2y-9Sh"/>
                 <outlet property="keepButton" destination="iEC-TT-Rkr" id="Iye-n4-eaz"/>
                 <outlet property="placeName" destination="3TP-gA-CJA" id="DBZ-g7-Emt"/>
             </connections>
@@ -23,8 +24,22 @@
                 </imageView>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6L-Ls-fMG">
                     <rect key="frame" x="0.0" y="-4" width="600" height="84"/>
+                    <subviews>
+                        <button tag="462" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkL-XJ-pyg">
+                            <rect key="frame" x="562" y="8" width="30" height="30"/>
+                            <animations/>
+                            <state key="normal" title="ℹ︎">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
                     <animations/>
                     <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="0.0" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="gkL-XJ-pyg" firstAttribute="top" secondItem="o6L-Ls-fMG" secondAttribute="top" constant="8" id="bd2-cs-qHc"/>
+                        <constraint firstAttribute="trailing" secondItem="gkL-XJ-pyg" secondAttribute="trailing" constant="8" id="zLt-qp-fmE"/>
+                    </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlaceName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TP-gA-CJA">
                     <rect key="frame" x="73" y="25" width="138.5" height="30"/>

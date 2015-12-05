@@ -119,12 +119,26 @@ extension ShakeViewController{
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         // you need to implement this method too or you can't swipe to display the actions
     }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ShakeCellItem
+        cell.keepButtonPressed(nil)
+    }
 }
 
 
 extension ShakeViewController {
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "showDetailsSegue" && sender?.tag != 462{
+            return false
+        }
+        return true
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let cell = sender as? ShakeCellItem where segue.identifier == "showDetailsSegue",
+        if //UGLY HACK :), will break if layout is changed
+            let cell = sender?.superview??.superview?.superview?.superview?.superview as? ShakeCellItem
+            where segue.identifier == "showDetailsSegue",
            let vc = segue.destinationViewController as? DetailViewController {
             vc.place = cell.place
         }
@@ -137,5 +151,8 @@ extension ShakeViewController {
 extension ShakeViewController : KeepStatusListener{
     func keepStatusChanged(){
         self.nextBtn.enabled = self.tableData?.filter({$0.keep}).count > 0
+    }
+    func fireSegueWithIdentifier(identifier: String, sender: AnyObject?) {
+        self.performSegueWithIdentifier(identifier, sender: sender)
     }
 }

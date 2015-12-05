@@ -13,6 +13,7 @@ class ShakeItem: CardView{
     @IBOutlet weak var placeName: UILabel!
     @IBOutlet weak var keepButton: UIButton!
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var infoBtn: UIButton!
     // Our custom view from the XIB file
     var view: UIView!
     
