@@ -82,23 +82,60 @@
                                     <constraint firstAttribute="height" constant="64" id="OvJ-Zv-cSH"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsv-YE-sHP" customClass="ShakeItem" customModule="shakemytours" customModuleProvider="target">
+                                <rect key="frame" x="16" y="168" width="288" height="64"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.45098039220000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="HOr-Ol-1pg"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJa-rx-Bk5" customClass="ShakeItem" customModule="shakemytours" customModuleProvider="target">
+                                <rect key="frame" x="16" y="312" width="288" height="64"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.45098039220000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="HJf-mA-HuC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aus-1z-spa" customClass="ShakeItem" customModule="shakemytours" customModuleProvider="target">
+                                <rect key="frame" x="16" y="240" width="288" height="64"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.45098039220000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Pmx-Nk-l7N"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7ji-ty-DKh" firstAttribute="top" secondItem="Zyy-pe-Pgk" secondAttribute="bottom" constant="24" id="1ky-yb-rWo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="teY-gD-Cdg" secondAttribute="trailing" id="LYm-a0-Af2"/>
+                            <constraint firstItem="zsv-YE-sHP" firstAttribute="top" secondItem="teY-gD-Cdg" secondAttribute="bottom" constant="8" symbolic="YES" id="4Ad-Wq-zkp"/>
+                            <constraint firstItem="teY-gD-Cdg" firstAttribute="trailing" secondItem="7ji-ty-DKh" secondAttribute="trailing" id="4te-eH-IXg"/>
+                            <constraint firstItem="bJa-rx-Bk5" firstAttribute="leading" secondItem="aus-1z-spa" secondAttribute="leading" id="Ef6-zy-EZC"/>
+                            <constraint firstItem="aus-1z-spa" firstAttribute="top" secondItem="zsv-YE-sHP" secondAttribute="bottom" constant="8" id="Eyb-F5-fWo"/>
+                            <constraint firstItem="zsv-YE-sHP" firstAttribute="trailing" secondItem="teY-gD-Cdg" secondAttribute="trailing" id="NOJ-ef-e2z"/>
+                            <constraint firstItem="bJa-rx-Bk5" firstAttribute="top" secondItem="aus-1z-spa" secondAttribute="bottom" constant="8" id="O10-4O-UxT"/>
+                            <constraint firstItem="zsv-YE-sHP" firstAttribute="leading" secondItem="teY-gD-Cdg" secondAttribute="leading" id="YT7-YY-GJJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7ji-ty-DKh" secondAttribute="trailing" id="Z5h-hO-Bsc"/>
                             <constraint firstItem="7ji-ty-DKh" firstAttribute="centerX" secondItem="Xoy-Q3-NRf" secondAttribute="centerX" id="aSz-hO-teU"/>
+                            <constraint firstItem="bJa-rx-Bk5" firstAttribute="trailing" secondItem="aus-1z-spa" secondAttribute="trailing" id="cnb-Ki-I8t"/>
+                            <constraint firstItem="teY-gD-Cdg" firstAttribute="leading" secondItem="7ji-ty-DKh" secondAttribute="leading" id="e4n-HC-DA2"/>
+                            <constraint firstItem="aus-1z-spa" firstAttribute="trailing" secondItem="zsv-YE-sHP" secondAttribute="trailing" id="eJD-ro-bOD"/>
                             <constraint firstItem="7ji-ty-DKh" firstAttribute="leading" secondItem="Xoy-Q3-NRf" secondAttribute="leadingMargin" id="hEl-zU-y4A"/>
+                            <constraint firstItem="aus-1z-spa" firstAttribute="leading" secondItem="zsv-YE-sHP" secondAttribute="leading" id="pY7-9k-7YD"/>
+                            <constraint firstItem="bJa-rx-Bk5" firstAttribute="top" secondItem="aus-1z-spa" secondAttribute="bottom" constant="8" id="rwh-Gk-sz4"/>
                             <constraint firstItem="teY-gD-Cdg" firstAttribute="top" secondItem="7ji-ty-DKh" secondAttribute="bottom" constant="8" symbolic="YES" id="u8J-2e-IY4"/>
-                            <constraint firstItem="teY-gD-Cdg" firstAttribute="leading" secondItem="Xoy-Q3-NRf" secondAttribute="leadingMargin" id="ymZ-PD-MgE"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="fifthItem" destination="bJa-rx-Bk5" id="Ki9-3h-Z0m"/>
                         <outlet property="firstItem" destination="7ji-ty-DKh" id="79L-jS-MQ4"/>
+                        <outlet property="fourthItem" destination="aus-1z-spa" id="NUo-RH-5oz"/>
                         <outlet property="secondItem" destination="teY-gD-Cdg" id="MwG-Qh-XTi"/>
+                        <outlet property="thirdItem" destination="zsv-YE-sHP" id="oJV-Vp-zgp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnz-2m-9uY" userLabel="First Responder" sceneMemberID="firstResponder"/>
