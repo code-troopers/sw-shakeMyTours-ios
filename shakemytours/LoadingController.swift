@@ -12,8 +12,10 @@ import UIKit
 class LoadingController : UIViewController{
  
     @IBOutlet weak var phonePicture: UIImageView!
+    @IBOutlet weak var shakeLbl: UILabel!
     override func viewDidAppear(animated: Bool) {
         shakeView()
+        shakeLbl.fadeIn()
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(),{
             self.showResults()
         })
