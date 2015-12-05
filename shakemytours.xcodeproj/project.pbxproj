@@ -19,6 +19,7 @@
 		7BA076251C125A970070C03D /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA076241C125A970070C03D /* Place.swift */; };
 		7BA076271C125F140070C03D /* ShakeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA076261C125F140070C03D /* ShakeItem.xib */; };
 		7BA076291C125F240070C03D /* ShakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA076281C125F240070C03D /* ShakeItem.swift */; };
+		7BBE57F11C12F475005A29CE /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE57F01C12F475005A29CE /* UIExtensions.swift */; };
 		7BE3E5BC1C12DD46007C3211 /* ShakeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3E5BB1C12DD46007C3211 /* ShakeCellItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		7BA076241C125A970070C03D /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		7BA076261C125F140070C03D /* ShakeItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShakeItem.xib; sourceTree = "<group>"; };
 		7BA076281C125F240070C03D /* ShakeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeItem.swift; sourceTree = "<group>"; };
+		7BBE57F01C12F475005A29CE /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		7BE3E5BB1C12DD46007C3211 /* ShakeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeCellItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				7BA076261C125F140070C03D /* ShakeItem.xib */,
 				7BA076281C125F240070C03D /* ShakeItem.swift */,
 				7BE3E5BB1C12DD46007C3211 /* ShakeCellItem.swift */,
+				7BBE57F01C12F475005A29CE /* UIExtensions.swift */,
 			);
 			path = shakemytours;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				7BA076091C124B670070C03D /* RootViewController.swift in Sources */,
 				7BE3E5BC1C12DD46007C3211 /* ShakeCellItem.swift in Sources */,
 				7BA076291C125F240070C03D /* ShakeItem.swift in Sources */,
+				7BBE57F11C12F475005A29CE /* UIExtensions.swift in Sources */,
 				7BA0761F1C1257DA0070C03D /* LoaderService.swift in Sources */,
 				7BA0760B1C124B670070C03D /* DataViewController.swift in Sources */,
 				7BA076251C125A970070C03D /* Place.swift in Sources */,

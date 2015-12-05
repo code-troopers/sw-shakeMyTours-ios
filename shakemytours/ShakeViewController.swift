@@ -74,27 +74,19 @@ extension ShakeViewController{
 /* Table actions */
 extension ShakeViewController{
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let keep = UITableViewRowAction(style: .Normal, title: "✅") { action, index in
-            self.tableData![index.row].keep = true
-            CATransaction.begin()
-            self.tableView.setEditing(false, animated: true)
-            CATransaction.commit()
-            
-        }
-        keep.backgroundColor = UIColor.lightGrayColor()
-        
-        let delete = UITableViewRowAction(style: .Normal, title: "🗑") { action, index in
+        let delete = UITableViewRowAction(style: .Destructive, title: "Delete") { action, index in
             self.tableData![index.row] = self.loaderService.pickOne()!
             CATransaction.begin()
             CATransaction.setCompletionBlock({
-                self.refreshTableView()
+                self.tableView.reloadData()
+                tableView.cellForRowAtIndexPath(indexPath)?.alpha = 0
+                tableView.cellForRowAtIndexPath(indexPath)?.fadeIn(0.5)
             })
             self.tableView.setEditing(false, animated: true)
             CATransaction.commit()
+            tableView.cellForRowAtIndexPath(indexPath)?.fadeOut()
         }
-        delete.backgroundColor = UIColor.redColor()
-        
-        return [delete, keep]
+        return [delete]
     }
     
     
