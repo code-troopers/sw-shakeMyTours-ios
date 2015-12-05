@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B6A43271C131B1D00E4DACE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6A43261C131B1D00E4DACE /* CardView.swift */; };
+		7B6A43291C13272B00E4DACE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6A43281C13272B00E4DACE /* DetailViewController.swift */; };
 		7BA076071C124B670070C03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA076061C124B670070C03D /* AppDelegate.swift */; };
 		7BA0760B1C124B670070C03D /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0760A1C124B670070C03D /* DataViewController.swift */; };
 		7BA076101C124B670070C03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA0760E1C124B670070C03D /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		7B6A43261C131B1D00E4DACE /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		7B6A43281C13272B00E4DACE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7BA076031C124B670070C03D /* shakemytours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shakemytours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA076061C124B670070C03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA0760A1C124B670070C03D /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				7BE3E5BB1C12DD46007C3211 /* ShakeCellItem.swift */,
 				7BBE57F01C12F475005A29CE /* UIExtensions.swift */,
 				7B6A43261C131B1D00E4DACE /* CardView.swift */,
+				7B6A43281C13272B00E4DACE /* DetailViewController.swift */,
 			);
 			path = shakemytours;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				7BA0761F1C1257DA0070C03D /* LoaderService.swift in Sources */,
 				7BA0760B1C124B670070C03D /* DataViewController.swift in Sources */,
 				7BA076251C125A970070C03D /* Place.swift in Sources */,
+				7B6A43291C13272B00E4DACE /* DetailViewController.swift in Sources */,
 				7BA076071C124B670070C03D /* AppDelegate.swift in Sources */,
 				7BA0761D1C1253C30070C03D /* ShakeViewController.swift in Sources */,
 			);

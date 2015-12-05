@@ -13,10 +13,12 @@ class ShakeCellItem : UITableViewCell{
     let images = ["food.png", "cathedral.png", "plein air.png", "shopping"]
     @IBOutlet weak var shakeItem: ShakeItem!
     var place : Place!
+    var bgImage : UIImage!
     
     func setPlaceInShake(place : Place){
         self.place = place
-        self.backgroundColor = UIColor(patternImage: UIImage(named: images[Int(arc4random_uniform(UInt32(images.count)))])!)
+        bgImage = UIImage(named: images[Int(arc4random_uniform(UInt32(images.count)))])!
+        self.backgroundColor = UIColor(patternImage: bgImage)
         shakeItem.keepButton.addTarget(self, action: "keepButtonPressed:", forControlEvents: UIControlEvents.TouchDown)
         shakeItem.updateView(place)
     }

@@ -100,3 +100,14 @@ extension ShakeViewController{
         // you need to implement this method too or you can't swipe to display the actions
     }
 }
+
+
+extension ShakeViewController {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let cell = sender as? ShakeCellItem where segue.identifier == "showDetailsSegue",
+           let vc = segue.destinationViewController as? DetailViewController {
+            vc.place = cell.place
+            vc.image = cell.bgImage
+        }
+    }
+}

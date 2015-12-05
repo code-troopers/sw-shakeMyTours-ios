@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
         <!--Data View Controller-->
@@ -108,6 +109,10 @@
                                         <animations/>
                                         <connections>
                                             <outlet property="shakeItem" destination="ELk-1O-glh" id="jmu-88-SI3"/>
+                                            <segue destination="Wqq-9q-XJ2" kind="show" identifier="showDetailsSegue" id="3sa-SY-32c">
+                                                <segue key="commit" inheritsFrom="parent" id="jB0-Ep-yuv"/>
+                                                <segue key="preview" inheritsFrom="commit" id="AvS-O1-UFa"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -135,6 +140,112 @@
             </objects>
             <point key="canvasLocation" x="1371" y="-251"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="vpi-vd-CVn">
+            <objects>
+                <viewController id="Wqq-9q-XJ2" customClass="DetailViewController" customModule="shakemytours" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ehE-Mb-QKn"/>
+                        <viewControllerLayoutGuide type="bottom" id="YZs-Zc-Zav"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r3U-1d-qzj">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="hZl-sx-ja6">
+                                <rect key="frame" x="0.0" y="-4" width="375" height="128"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="TF1-do-5bP"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrs-s0-1GK" userLabel="Location card" customClass="CardView" customModule="shakemytours" customModuleProvider="target">
+                                <rect key="frame" x="16" y="132" width="343" height="96"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="13 rue des Historiens, 37000 Tours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWx-hX-XuH">
+                                        <rect key="frame" x="37.5" y="8" width="267.5" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📞" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZ7-AZ-nxI">
+                                        <rect key="frame" x="8" y="36.5" width="22" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="06 12 34 56 78" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOT-YQ-xbT">
+                                        <rect key="frame" x="37.5" y="36.5" width="117" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🌐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjQ-ya-zhs">
+                                        <rect key="frame" x="8" y="65" width="22" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Consulter le site internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCl-kx-NF2">
+                                        <rect key="frame" x="37.5" y="65" width="187" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7o-Lv-TRi">
+                                        <rect key="frame" x="8" y="8" width="22" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="X7o-Lv-TRi" firstAttribute="top" secondItem="wrs-s0-1GK" secondAttribute="top" constant="8" id="5zn-mK-YZP"/>
+                                    <constraint firstItem="mjQ-ya-zhs" firstAttribute="top" secondItem="UZ7-AZ-nxI" secondAttribute="bottom" constant="8" id="8OZ-oe-KDF"/>
+                                    <constraint firstItem="pCl-kx-NF2" firstAttribute="leading" secondItem="jOT-YQ-xbT" secondAttribute="leading" id="9Fd-9S-nSD"/>
+                                    <constraint firstAttribute="height" constant="96" id="9H3-pF-hZ9"/>
+                                    <constraint firstItem="mjQ-ya-zhs" firstAttribute="leading" secondItem="UZ7-AZ-nxI" secondAttribute="leading" id="9Oz-L6-cy6"/>
+                                    <constraint firstItem="UZ7-AZ-nxI" firstAttribute="top" secondItem="X7o-Lv-TRi" secondAttribute="bottom" constant="8" id="BEg-uf-tYS"/>
+                                    <constraint firstItem="UZ7-AZ-nxI" firstAttribute="leading" secondItem="X7o-Lv-TRi" secondAttribute="leading" id="EV9-Lq-fgL"/>
+                                    <constraint firstItem="jOT-YQ-xbT" firstAttribute="bottom" secondItem="UZ7-AZ-nxI" secondAttribute="bottom" id="Ieb-LV-l6T"/>
+                                    <constraint firstItem="fWx-hX-XuH" firstAttribute="leading" secondItem="X7o-Lv-TRi" secondAttribute="trailing" constant="8" id="Kb2-zM-PUF"/>
+                                    <constraint firstItem="jOT-YQ-xbT" firstAttribute="leading" secondItem="fWx-hX-XuH" secondAttribute="leading" id="bNR-PU-BrT"/>
+                                    <constraint firstItem="fWx-hX-XuH" firstAttribute="baseline" secondItem="X7o-Lv-TRi" secondAttribute="baseline" id="bzK-18-qTu"/>
+                                    <constraint firstItem="pCl-kx-NF2" firstAttribute="bottom" secondItem="mjQ-ya-zhs" secondAttribute="bottom" id="o1w-24-pdE"/>
+                                    <constraint firstItem="X7o-Lv-TRi" firstAttribute="leading" secondItem="wrs-s0-1GK" secondAttribute="leading" constant="8" id="tKC-X9-GN8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="wrs-s0-1GK" secondAttribute="trailing" id="0gE-tx-uGd"/>
+                            <constraint firstItem="wrs-s0-1GK" firstAttribute="leading" secondItem="r3U-1d-qzj" secondAttribute="leadingMargin" id="I6M-TE-Te0"/>
+                            <constraint firstItem="hZl-sx-ja6" firstAttribute="top" secondItem="ehE-Mb-QKn" secondAttribute="bottom" constant="-4" id="PGc-M2-O4H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hZl-sx-ja6" secondAttribute="trailing" constant="-16" id="QtZ-2p-jkD"/>
+                            <constraint firstItem="wrs-s0-1GK" firstAttribute="top" secondItem="hZl-sx-ja6" secondAttribute="bottom" constant="8" id="doY-LQ-ibm"/>
+                            <constraint firstItem="hZl-sx-ja6" firstAttribute="leading" secondItem="r3U-1d-qzj" secondAttribute="leadingMargin" constant="-16" id="hu7-q3-NyR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="fWx-hX-XuH" id="wtd-Ra-xje"/>
+                        <outlet property="imageView" destination="hZl-sx-ja6" id="Ml0-N0-t6l"/>
+                        <outlet property="phoneLabel" destination="jOT-YQ-xbT" id="xbT-3z-4Bn"/>
+                        <outlet property="webLabel" destination="pCl-kx-NF2" id="yee-IJ-2ZY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7bu-B4-aVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892.5" y="-251.5"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WbF-8l-9oL">
             <objects>
@@ -157,5 +268,9 @@
     </scenes>
     <resources>
         <image name="Home" width="375" height="667"/>
+        <image name="food" width="375" height="122"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3sa-SY-32c"/>
+    </inferredMetricsTieBreakers>
 </document>
