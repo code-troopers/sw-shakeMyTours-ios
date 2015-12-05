@@ -60,6 +60,10 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
             .forEach({annot -> Void in
             mapView.addAnnotation(annot)
         })
+        let lastIndex = coords2D.count - 2
+        for i in 0...lastIndex{
+            drawRoute(start: coords2D[i], arrival: coords2D[i+1])
+        }
         let centerRegion = centerMapOnRegion(&coords2D)
         dispatch_async(dispatch_get_main_queue(), {
             UIView.animateWithDuration(2, animations: {
@@ -76,8 +80,6 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
     
     func centerMapOnRegion(inout coords : [CLLocationCoordinate2D]) -> MKMapRect{
         let geodesic = MKGeodesicPolyline(coordinates: &coords[0], count: coords.count)
-        mapView.addOverlay(geodesic)
-        
         
         var regionRect = geodesic.boundingMapRect
         let wPadding = regionRect.size.width * 0.25
@@ -95,6 +97,21 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
 }
 
 extension ActivityDetailController : MKMapViewDelegate{
+    
+    func drawRoute(start start : CLLocationCoordinate2D, arrival : CLLocationCoordinate2D){
+        let dirRequest = MKDirectionsRequest()
+        let startPM = MKPlacemark(coordinate: start, addressDictionary: nil)
+        let endPM = MKPlacemark(coordinate: arrival, addressDictionary: nil)
+        dirRequest.source = MKMapItem(placemark: startPM)
+        dirRequest.destination = MKMapItem(placemark: endPM)
+
+        MKDirections.init(request: dirRequest).calculateDirectionsWithCompletionHandler({(response, error) -> Void in
+            if let polyline = response?.routes.first?.polyline{
+                self.mapView.addOverlay(polyline)
+            }
+        })
+    }
+    
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer{
         let polylineRenderer = MKPolylineRenderer(overlay: overlay)
         if overlay is MKPolyline {
