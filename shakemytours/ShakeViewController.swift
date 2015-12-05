@@ -111,7 +111,6 @@ extension ShakeViewController {
         if let cell = sender as? ShakeCellItem where segue.identifier == "showDetailsSegue",
            let vc = segue.destinationViewController as? DetailViewController {
             vc.place = cell.place
-            vc.image = cell.bgImage
         }
         if let vc = segue.destinationViewController as? ActivityDetailController where segue.identifier == "showActivitySegue"{
             vc.tableData = self.tableData?.filter({$0.keep})

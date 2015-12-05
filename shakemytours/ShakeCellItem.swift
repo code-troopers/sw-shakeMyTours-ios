@@ -18,8 +18,14 @@ class ShakeCellItem : UITableViewCell{
     
     func setPlaceInShake(place : Place){
         self.place = place
-        bgImage = UIImage(named: images[Int(arc4random_uniform(UInt32(images.count)))])!
+        if(place.image != nil){
+            bgImage = place.image
+        }else{
+            bgImage = UIImage(named: images[Int(arc4random_uniform(UInt32(images.count)))])!
+            place.image = bgImage
+        }
         self.backgroundColor = UIColor(patternImage: bgImage)
+
         shakeItem.keepButton.addTarget(self, action: "keepButtonPressed:", forControlEvents: UIControlEvents.TouchDown)
         shakeItem.updateView(place)
     }

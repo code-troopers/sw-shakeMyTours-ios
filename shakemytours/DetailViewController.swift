@@ -11,7 +11,6 @@ import UIKit
 
 class DetailViewController : UIViewController{
     var place : Place?
-    var image : UIImage?
     
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -29,7 +28,7 @@ class DetailViewController : UIViewController{
         self.phoneLabel.text = place?.phone
         self.webLabel.userInteractionEnabled = true
         self.webLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "userClickedWeb:"))
-        self.imageView.image = image
+        self.imageView.image = place?.image
     }
     
     func userClickedWeb(sender: AnyObject){
