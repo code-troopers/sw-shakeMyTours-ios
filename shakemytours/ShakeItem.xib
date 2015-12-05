@@ -15,43 +15,52 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="96"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o6L-Ls-fMG">
+                    <rect key="frame" x="0.0" y="-4" width="600" height="100"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="0.5" colorSpace="calibratedRGB"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlaceName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TP-gA-CJA">
-                    <rect key="frame" x="50" y="8" width="87" height="20.5"/>
+                    <rect key="frame" x="58" y="8" width="87" height="20.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMM-fQ-Kf3">
-                    <rect key="frame" x="50" y="36" width="37.5" height="20.5"/>
+                    <rect key="frame" x="58" y="36" width="37.5" height="20.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx km" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7D-f0-h7E">
                     <rect key="frame" x="535" y="8" width="45" height="20.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEC-TT-Rkr">
-                    <rect key="frame" x="20" y="33" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEC-TT-Rkr">
+                    <rect key="frame" x="20" y="25" width="30" height="30"/>
                     <animations/>
-                    <state key="normal" title="✔️"/>
+                    <state key="normal" title="✔️">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
+                    </state>
                 </button>
             </subviews>
             <animations/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="o6L-Ls-fMG" secondAttribute="trailing" id="907-Sv-Wbm"/>
+                <constraint firstItem="o6L-Ls-fMG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-4" id="E9L-lo-KLs"/>
+                <constraint firstItem="o6L-Ls-fMG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Fvr-rC-bJQ"/>
                 <constraint firstItem="3TP-gA-CJA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Hmd-Fn-iUf"/>
-                <constraint firstItem="3TP-gA-CJA" firstAttribute="leading" secondItem="iEC-TT-Rkr" secondAttribute="trailing" id="Y0B-k8-Qvr"/>
+                <constraint firstAttribute="bottom" secondItem="o6L-Ls-fMG" secondAttribute="bottom" id="QJH-Yj-JpQ"/>
+                <constraint firstItem="3TP-gA-CJA" firstAttribute="leading" secondItem="iEC-TT-Rkr" secondAttribute="trailing" constant="8" id="Y0B-k8-Qvr"/>
                 <constraint firstAttribute="trailing" secondItem="v7D-f0-h7E" secondAttribute="trailing" constant="20" symbolic="YES" id="brR-dJ-X02"/>
                 <constraint firstItem="oMM-fQ-Kf3" firstAttribute="leading" secondItem="3TP-gA-CJA" secondAttribute="leading" id="dti-5J-C0I"/>
-                <constraint firstItem="iEC-TT-Rkr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dzG-2x-E2T"/>
+                <constraint firstItem="iEC-TT-Rkr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-8" id="dzG-2x-E2T"/>
                 <constraint firstItem="oMM-fQ-Kf3" firstAttribute="top" secondItem="3TP-gA-CJA" secondAttribute="bottom" constant="7.5" id="fBX-hQ-7DR"/>
                 <constraint firstItem="v7D-f0-h7E" firstAttribute="bottom" secondItem="3TP-gA-CJA" secondAttribute="bottom" id="rl5-uV-zK3"/>
                 <constraint firstItem="iEC-TT-Rkr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="ygB-9L-MG9"/>

@@ -12,10 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let appColor = UIColor(hexString: "16AFCA")
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        let navigationBarAppearance = UINavigationBar.appearance()
+        
+        navigationBarAppearance.tintColor = UIColor.whiteColor()
+        navigationBarAppearance.barTintColor = appColor
+        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        application.statusBarStyle = .LightContent
         return true
     }
 

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ShakeItem: UIView{
+class ShakeItem: CardView{
     @IBOutlet weak var placeName: UILabel!
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var distance: UILabel!
@@ -17,15 +17,6 @@ class ShakeItem: UIView{
     // Our custom view from the XIB file
     var view: UIView!
     
-    override init(frame: CGRect) {
-        // 1. setup any properties here
-        
-        // 2. call super.init(frame:)
-        super.init(frame: frame)
-        
-        // 3. Setup view from .xib file
-        xibSetup()
-    }
     
     required init?(coder aDecoder: NSCoder) {
         // 1. setup any properties here

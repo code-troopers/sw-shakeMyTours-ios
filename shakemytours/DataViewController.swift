@@ -10,8 +10,10 @@ import UIKit
 
 class DataViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBar.hidden = true
     }
+
     override func motionEnded(motion: UIEventSubtype,
         withEvent event: UIEvent?) {
             
@@ -23,6 +25,7 @@ class DataViewController: UIViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }
+            super.motionEnded(motion, withEvent: event)
     }
 
 }

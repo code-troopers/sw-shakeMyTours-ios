@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B6A43271C131B1D00E4DACE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6A43261C131B1D00E4DACE /* CardView.swift */; };
 		7BA076071C124B670070C03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA076061C124B670070C03D /* AppDelegate.swift */; };
-		7BA076091C124B670070C03D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA076081C124B670070C03D /* RootViewController.swift */; };
 		7BA0760B1C124B670070C03D /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0760A1C124B670070C03D /* DataViewController.swift */; };
 		7BA076101C124B670070C03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA0760E1C124B670070C03D /* Main.storyboard */; };
 		7BA076121C124B670070C03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BA076111C124B670070C03D /* Assets.xcassets */; };
@@ -24,9 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B6A43261C131B1D00E4DACE /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7BA076031C124B670070C03D /* shakemytours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shakemytours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA076061C124B670070C03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7BA076081C124B670070C03D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7BA0760A1C124B670070C03D /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		7BA0760F1C124B670070C03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BA076111C124B670070C03D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				7BA076061C124B670070C03D /* AppDelegate.swift */,
-				7BA076081C124B670070C03D /* RootViewController.swift */,
 				7BA0760A1C124B670070C03D /* DataViewController.swift */,
 				7BA0760E1C124B670070C03D /* Main.storyboard */,
 				7BA076111C124B670070C03D /* Assets.xcassets */,
@@ -87,6 +86,7 @@
 				7BA076281C125F240070C03D /* ShakeItem.swift */,
 				7BE3E5BB1C12DD46007C3211 /* ShakeCellItem.swift */,
 				7BBE57F01C12F475005A29CE /* UIExtensions.swift */,
+				7B6A43261C131B1D00E4DACE /* CardView.swift */,
 			);
 			path = shakemytours;
 			sourceTree = "<group>";
@@ -164,8 +164,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BA076091C124B670070C03D /* RootViewController.swift in Sources */,
 				7BE3E5BC1C12DD46007C3211 /* ShakeCellItem.swift in Sources */,
+				7B6A43271C131B1D00E4DACE /* CardView.swift in Sources */,
 				7BA076291C125F240070C03D /* ShakeItem.swift in Sources */,
 				7BBE57F11C12F475005A29CE /* UIExtensions.swift in Sources */,
 				7BA0761F1C1257DA0070C03D /* LoaderService.swift in Sources */,
