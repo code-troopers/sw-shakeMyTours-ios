@@ -12,6 +12,7 @@ import UIKit
 class ShakeViewController : UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nextBtn: UIBarButtonItem!
     var tableData : [Place]?
     let loaderService = LoaderService()
     
@@ -27,6 +28,7 @@ class ShakeViewController : UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ShakeCell", forIndexPath: indexPath) as! ShakeCellItem
         let place = tableData![indexPath.row]
+        cell.parent = self
         cell.setPlaceInShake(place)
         return cell
     }
@@ -80,8 +82,10 @@ extension ShakeViewController{
             CATransaction.begin()
             CATransaction.setCompletionBlock({
                 self.tableView.reloadData()
-                tableView.cellForRowAtIndexPath(indexPath)?.alpha = 0
-                tableView.cellForRowAtIndexPath(indexPath)?.fadeIn(0.5)
+                if let cell = tableView.cellForRowAtIndexPath(indexPath) as? ShakeCellItem{
+                    cell.alpha = 0
+                    cell.fadeIn(0.5)
+                }
             })
             self.tableView.setEditing(false, animated: true)
             CATransaction.commit()
@@ -109,5 +113,14 @@ extension ShakeViewController {
             vc.place = cell.place
             vc.image = cell.bgImage
         }
+        if let vc = segue.destinationViewController as? ActivityDetailController where segue.identifier == "showActivitySegue"{
+            vc.tableData = self.tableData?.filter({$0.keep})
+        }
+    }
+}
+
+extension ShakeViewController : KeepStatusListener{
+    func keepStatusChanged(){
+        self.nextBtn.enabled = self.tableData?.filter({$0.keep}).count > 0
     }
 }

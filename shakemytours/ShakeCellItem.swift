@@ -14,6 +14,7 @@ class ShakeCellItem : UITableViewCell{
     @IBOutlet weak var shakeItem: ShakeItem!
     var place : Place!
     var bgImage : UIImage!
+    var parent : KeepStatusListener!
     
     func setPlaceInShake(place : Place){
         self.place = place
@@ -28,6 +29,12 @@ class ShakeCellItem : UITableViewCell{
         shakeItem.keepButton.layer.cornerRadius = shakeItem.keepButton.frame.height / 2
         shakeItem.keepButton.layer.borderWidth = 0
         self.shakeItem.keepButton.layer.backgroundColor = (self.place.keep ? UIColor(hexString:"#40A43F") : UIColor.clearColor()).CGColor
+        parent.keepStatusChanged()
     }
     
+}
+
+
+protocol KeepStatusListener{
+    func keepStatusChanged()
 }

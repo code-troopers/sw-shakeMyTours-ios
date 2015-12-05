@@ -9,11 +9,9 @@
 import Foundation
 import UIKit
 
-class ShakeItem: UIView{
-    @IBOutlet weak var placeName: UILabel!
-    @IBOutlet weak var type: UILabel!
-    @IBOutlet weak var distance: UILabel!
-    @IBOutlet weak var keepButton: UIButton!
+class LocationItem: UIView{
+
+    @IBOutlet weak var placeName : UILabel!
     // Our custom view from the XIB file
     var view: UIView!
     
@@ -46,15 +44,13 @@ class ShakeItem: UIView{
     func loadViewFromNib() -> UIView {
         
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "ShakeItem", bundle: bundle)
+        let nib = UINib(nibName: "LocationItem", bundle: bundle)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         
         return view
     }
     
     func updateView(place : Place){
-        self.placeName?.text = place.name
-        self.type?.text = place.type
-        self.distance?.text = String(format: "%d km", place.distance!)
+        placeName!.text = place.name
     }
 }
