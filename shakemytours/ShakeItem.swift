@@ -13,6 +13,7 @@ class ShakeItem: UIView{
     @IBOutlet weak var placeName: UILabel!
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var keepButton: UIButton!
     // Our custom view from the XIB file
     var view: UIView!
     

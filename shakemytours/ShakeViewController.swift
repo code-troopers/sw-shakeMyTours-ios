@@ -26,7 +26,8 @@ class ShakeViewController : UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ShakeCell", forIndexPath: indexPath) as! ShakeCellItem
-        cell.setPlaceInShake(tableData![indexPath.row])
+        let place = tableData![indexPath.row]
+        cell.setPlaceInShake(place)
         return cell
     }
     
