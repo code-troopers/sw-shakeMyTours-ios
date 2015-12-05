@@ -82,17 +82,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELk-1O-glh" customClass="ShakeItem" customModule="shakemytours">
-                                                    <rect key="frame" x="8" y="8" width="327" height="79.5"/>
+                                                    <rect key="frame" x="0.0" y="4" width="343" height="88"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.94117647059999998" green="0.45098039220000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ELk-1O-glh" secondAttribute="bottom" id="AiX-TH-8RP"/>
-                                                <constraint firstItem="ELk-1O-glh" firstAttribute="top" secondItem="g0m-8f-Rvx" secondAttribute="topMargin" id="Vro-kg-ZAa"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ELk-1O-glh" secondAttribute="trailing" id="dOe-cs-OSL"/>
-                                                <constraint firstItem="ELk-1O-glh" firstAttribute="leading" secondItem="g0m-8f-Rvx" secondAttribute="leadingMargin" id="x9T-N4-KeY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ELk-1O-glh" secondAttribute="bottom" constant="-4" id="AiX-TH-8RP"/>
+                                                <constraint firstItem="ELk-1O-glh" firstAttribute="top" secondItem="g0m-8f-Rvx" secondAttribute="topMargin" constant="-4" id="Vro-kg-ZAa"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ELk-1O-glh" secondAttribute="trailing" constant="-8" id="dOe-cs-OSL"/>
+                                                <constraint firstItem="ELk-1O-glh" firstAttribute="leading" secondItem="g0m-8f-Rvx" secondAttribute="leadingMargin" constant="-8" id="x9T-N4-KeY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>

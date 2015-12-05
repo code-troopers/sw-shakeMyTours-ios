@@ -9,8 +9,8 @@
 import Foundation
 
 class LoaderService{
- 
-    func loadLocalData(amountToLoad : Int, handler:  PlaceHandler){
+    
+    private func loadFromJson(amountToLoad : Int) -> [Place]?{
         if let path = NSBundle.mainBundle().pathForResource("mockdata", ofType: "json"){
             do{
                 let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
@@ -24,12 +24,23 @@ class LoaderService{
                             }
                         }
                     }
-                    handler.handlePlaces(out)
+                    return out
                 }
             }catch{
                 
             }
         }
+        return nil
+    }
+ 
+    func loadLocalData(amountToLoad : Int, handler:  PlaceHandler){
+        if let places = loadFromJson(amountToLoad){
+            handler.handlePlaces(places)
+        }
+    }
+    
+    func pickOne() -> Place?{
+        return loadFromJson(1)?[0]
     }
 }
 

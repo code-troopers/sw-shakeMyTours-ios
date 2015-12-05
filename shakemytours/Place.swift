@@ -12,6 +12,7 @@ class Place{
     var distance : NSNumber?
     var name : String?
     var type : String?
+    var keep = false
     
     init(name : String, distance : NSNumber, type: String){
         self.name = name
