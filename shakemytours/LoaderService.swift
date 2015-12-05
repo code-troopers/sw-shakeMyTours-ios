@@ -10,7 +10,7 @@ import Foundation
 
 class LoaderService{
  
-    func loadLocalData(amountToLoad : Int) -> [Place]?{
+    func loadLocalData(amountToLoad : Int, handler:  PlaceHandler){
         if let path = NSBundle.mainBundle().pathForResource("mockdata", ofType: "json"){
             do{
                 let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
@@ -24,12 +24,15 @@ class LoaderService{
                             }
                         }
                     }
-                    return out
+                    handler.handlePlaces(out)
                 }
             }catch{
                 
             }
         }
-        return nil
     }
+}
+
+protocol PlaceHandler{
+    func handlePlaces(places : [Place])
 }

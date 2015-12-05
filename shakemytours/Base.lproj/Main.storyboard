@@ -21,8 +21,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1b-V9-EN7">
                                 <rect key="frame" x="20" y="8" width="560" height="508"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Shake meeeeeeee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ev1-3e-uG7">
-                                        <rect key="frame" x="210" y="265.5" width="140.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake meeeeeeee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ev1-3e-uG7">
+                                        <rect key="frame" x="210" y="244" width="140.5" height="20.5"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,79 +63,62 @@
                         <viewControllerLayoutGuide type="bottom" id="erf-bt-5bx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xoy-Q3-NRf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ji-ty-DKh" customClass="ShakeItem" customModule="shakemytours" customModuleProvider="target">
-                                <rect key="frame" x="16" y="24" width="288" height="64"/>
+                            <tableView clipsSubviews="YES" contentMode="center" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="96" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Cs-8N-4fX">
+                                <rect key="frame" x="16" y="61.5" width="343" height="480"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.45098039220000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="VbX-RT-tvo"/>
+                                    <constraint firstAttribute="height" constant="480" id="bOs-up-vXB"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teY-gD-Cdg" customClass="ShakeItem" customModule="shakemytours" customModuleProvider="target">
-                                <rect key="frame" x="16" y="96" width="288" height="64"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.45098039220000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="OvJ-Zv-cSH"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsv-YE-sHP" customClass="ShakeItem" customModule="shakemytours" customModuleProvider="target">
-                                <rect key="frame" x="16" y="168" width="288" height="64"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.45098039220000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="HOr-Ol-1pg"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJa-rx-Bk5" customClass="ShakeItem" customModule="shakemytours" customModuleProvider="target">
-                                <rect key="frame" x="16" y="312" width="288" height="64"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.45098039220000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="HJf-mA-HuC"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aus-1z-spa" customClass="ShakeItem" customModule="shakemytours" customModuleProvider="target">
-                                <rect key="frame" x="16" y="240" width="288" height="64"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.45098039220000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="Pmx-Nk-l7N"/>
-                                </constraints>
-                            </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShakeCell" id="BfY-lC-W5K" customClass="ShakeCellItem" customModule="shakemytours" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="343" height="96"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BfY-lC-W5K" id="g0m-8f-Rvx">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="96"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELk-1O-glh" customClass="ShakeItem" customModule="shakemytours">
+                                                    <rect key="frame" x="8" y="8" width="327" height="79.5"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.94117647059999998" green="0.45098039220000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ELk-1O-glh" secondAttribute="bottom" id="AiX-TH-8RP"/>
+                                                <constraint firstItem="ELk-1O-glh" firstAttribute="top" secondItem="g0m-8f-Rvx" secondAttribute="topMargin" id="Vro-kg-ZAa"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ELk-1O-glh" secondAttribute="trailing" id="dOe-cs-OSL"/>
+                                                <constraint firstItem="ELk-1O-glh" firstAttribute="leading" secondItem="g0m-8f-Rvx" secondAttribute="leadingMargin" id="x9T-N4-KeY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="shakeItem" destination="ELk-1O-glh" id="jmu-88-SI3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="aaC-6o-gHc" id="xrO-Xd-B71"/>
+                                    <outlet property="delegate" destination="aaC-6o-gHc" id="pfW-DZ-NRP"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7ji-ty-DKh" firstAttribute="top" secondItem="Zyy-pe-Pgk" secondAttribute="bottom" constant="24" id="1ky-yb-rWo"/>
-                            <constraint firstItem="zsv-YE-sHP" firstAttribute="top" secondItem="teY-gD-Cdg" secondAttribute="bottom" constant="8" symbolic="YES" id="4Ad-Wq-zkp"/>
-                            <constraint firstItem="teY-gD-Cdg" firstAttribute="trailing" secondItem="7ji-ty-DKh" secondAttribute="trailing" id="4te-eH-IXg"/>
-                            <constraint firstItem="bJa-rx-Bk5" firstAttribute="leading" secondItem="aus-1z-spa" secondAttribute="leading" id="Ef6-zy-EZC"/>
-                            <constraint firstItem="aus-1z-spa" firstAttribute="top" secondItem="zsv-YE-sHP" secondAttribute="bottom" constant="8" id="Eyb-F5-fWo"/>
-                            <constraint firstItem="zsv-YE-sHP" firstAttribute="trailing" secondItem="teY-gD-Cdg" secondAttribute="trailing" id="NOJ-ef-e2z"/>
-                            <constraint firstItem="bJa-rx-Bk5" firstAttribute="top" secondItem="aus-1z-spa" secondAttribute="bottom" constant="8" id="O10-4O-UxT"/>
-                            <constraint firstItem="zsv-YE-sHP" firstAttribute="leading" secondItem="teY-gD-Cdg" secondAttribute="leading" id="YT7-YY-GJJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7ji-ty-DKh" secondAttribute="trailing" id="Z5h-hO-Bsc"/>
-                            <constraint firstItem="7ji-ty-DKh" firstAttribute="centerX" secondItem="Xoy-Q3-NRf" secondAttribute="centerX" id="aSz-hO-teU"/>
-                            <constraint firstItem="bJa-rx-Bk5" firstAttribute="trailing" secondItem="aus-1z-spa" secondAttribute="trailing" id="cnb-Ki-I8t"/>
-                            <constraint firstItem="teY-gD-Cdg" firstAttribute="leading" secondItem="7ji-ty-DKh" secondAttribute="leading" id="e4n-HC-DA2"/>
-                            <constraint firstItem="aus-1z-spa" firstAttribute="trailing" secondItem="zsv-YE-sHP" secondAttribute="trailing" id="eJD-ro-bOD"/>
-                            <constraint firstItem="7ji-ty-DKh" firstAttribute="leading" secondItem="Xoy-Q3-NRf" secondAttribute="leadingMargin" id="hEl-zU-y4A"/>
-                            <constraint firstItem="aus-1z-spa" firstAttribute="leading" secondItem="zsv-YE-sHP" secondAttribute="leading" id="pY7-9k-7YD"/>
-                            <constraint firstItem="bJa-rx-Bk5" firstAttribute="top" secondItem="aus-1z-spa" secondAttribute="bottom" constant="8" id="rwh-Gk-sz4"/>
-                            <constraint firstItem="teY-gD-Cdg" firstAttribute="top" secondItem="7ji-ty-DKh" secondAttribute="bottom" constant="8" symbolic="YES" id="u8J-2e-IY4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Cs-8N-4fX" secondAttribute="trailing" id="RdD-Bl-1sm"/>
+                            <constraint firstItem="0Cs-8N-4fX" firstAttribute="leading" secondItem="Xoy-Q3-NRf" secondAttribute="leadingMargin" id="kSy-El-WJz"/>
+                            <constraint firstItem="0Cs-8N-4fX" firstAttribute="centerY" secondItem="Xoy-Q3-NRf" secondAttribute="centerY" id="mee-Vm-BX1"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="fifthItem" destination="bJa-rx-Bk5" id="Ki9-3h-Z0m"/>
-                        <outlet property="firstItem" destination="7ji-ty-DKh" id="79L-jS-MQ4"/>
-                        <outlet property="fourthItem" destination="aus-1z-spa" id="NUo-RH-5oz"/>
-                        <outlet property="secondItem" destination="teY-gD-Cdg" id="MwG-Qh-XTi"/>
-                        <outlet property="thirdItem" destination="zsv-YE-sHP" id="oJV-Vp-zgp"/>
+                        <outlet property="tableView" destination="0Cs-8N-4fX" id="TcE-CH-ykH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnz-2m-9uY" userLabel="First Responder" sceneMemberID="firstResponder"/>
