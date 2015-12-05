@@ -9,11 +9,10 @@
 import Foundation
 import UIKit
 
-class ShakeItem: UIView{
+class ShakeItem: CardView{
     @IBOutlet weak var placeName: UILabel!
-    @IBOutlet weak var type: UILabel!
-    @IBOutlet weak var distance: UILabel!
     @IBOutlet weak var keepButton: UIButton!
+    @IBOutlet weak var backgroundImage: UIImageView!
     // Our custom view from the XIB file
     var view: UIView!
     
@@ -54,7 +53,6 @@ class ShakeItem: UIView{
     
     func updateView(place : Place){
         self.placeName?.text = place.name
-        self.type?.text = place.type
-        self.distance?.text = String(format: "%d km", place.distance!)
+        self.backgroundImage.image = place.image
     }
 }

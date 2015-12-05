@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShakeItem" customModule="shakemytours" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImage" destination="SK3-02-YZg" id="t2S-t8-5P8"/>
                 <outlet property="keepButton" destination="iEC-TT-Rkr" id="Iye-n4-eaz"/>
                 <outlet property="placeName" destination="3TP-gA-CJA" id="DBZ-g7-Emt"/>
             </connections>
@@ -16,6 +17,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SK3-02-YZg">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                    <animations/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6L-Ls-fMG">
                     <rect key="frame" x="0.0" y="-4" width="600" height="84"/>
                     <animations/>
@@ -43,7 +48,11 @@
                 <constraint firstItem="o6L-Ls-fMG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-4" id="E9L-lo-KLs"/>
                 <constraint firstItem="o6L-Ls-fMG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Fvr-rC-bJQ"/>
                 <constraint firstAttribute="bottom" secondItem="o6L-Ls-fMG" secondAttribute="bottom" id="QJH-Yj-JpQ"/>
+                <constraint firstAttribute="bottom" secondItem="SK3-02-YZg" secondAttribute="bottom" id="Rah-MA-eCx"/>
+                <constraint firstItem="SK3-02-YZg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Txt-09-Ug7"/>
                 <constraint firstItem="3TP-gA-CJA" firstAttribute="leading" secondItem="iEC-TT-Rkr" secondAttribute="trailing" constant="8" id="Y0B-k8-Qvr"/>
+                <constraint firstItem="SK3-02-YZg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aQQ-a7-dUP"/>
+                <constraint firstAttribute="trailing" secondItem="SK3-02-YZg" secondAttribute="trailing" id="bd2-gu-77U"/>
                 <constraint firstItem="iEC-TT-Rkr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dzG-2x-E2T"/>
                 <constraint firstItem="3TP-gA-CJA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xQX-Rf-lQT"/>
                 <constraint firstItem="iEC-TT-Rkr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="ygB-9L-MG9"/>
