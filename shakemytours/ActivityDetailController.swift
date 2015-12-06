@@ -29,6 +29,12 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
         return tableData?.count ?? 0
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let center = tableData![indexPath.row].location{
+            mapView.setCenterCoordinate(center, animated: true)
+        }
+    }
+    
     @IBAction func shareButtonClick(sender: UIBarButtonItem) {
         let names = tableData!.map({$0.place.name!}).joinWithSeparator(" → ")
         let textToShare = "This is a great shake (\(names)), SHAKE it out !"
@@ -50,6 +56,7 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
                 let annot = PlaceAnnotation()
                 annot.coordinate = $0.location!
                 annot.pinColor = $0.pinColor
+                annot.title = $0.place.name
                 return annot
             })
             .forEach({annot -> Void in
@@ -109,25 +116,24 @@ extension ActivityDetailController : MKMapViewDelegate{
 
         MKDirections.init(request: dirRequest).calculateDirectionsWithCompletionHandler({(response, error) -> Void in
             if let polyline = response?.routes.first?.polyline{
-                self.mapView.addOverlay(polyline)
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.mapView.addOverlay(polyline)
+                })
             }
         })
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?    {
-        if let annotation = annotation as? PlaceAnnotation
-        {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if let annotation = annotation as? PlaceAnnotation  {
             let identifier = "placePin"
             var view = MKPinAnnotationView()
             
-            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as! MKPinAnnotationView!
-            {
+            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as! MKPinAnnotationView!{
                 view = dequeuedView
                 view.annotation = annotation
-            }
-            else
-            {
+            } else  {
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view.canShowCallout = true
                 view.pinTintColor = annotation.pinColor
             }
             return view
