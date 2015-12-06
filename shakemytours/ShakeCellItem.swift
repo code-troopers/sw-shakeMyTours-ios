@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class ShakeCellItem : UITableViewCell{
-    let images = ["lake.jpg", "musee.jpg", "noel.jpg", "shop.jpg", "vin.jpg"]
     @IBOutlet weak var shakeItem: ShakeItem!
     var place : Place!
     var parent : KeepStatusListener!
@@ -18,7 +17,7 @@ class ShakeCellItem : UITableViewCell{
     func setPlaceInShake(place : Place){
         self.place = place
         if(place.image == nil){
-            let bgImage = UIImage(named: images[Int(arc4random_uniform(UInt32(images.count)))])!
+            let bgImage = UIImage(named: place.imgName ?? "smt_default") ?? UIImage(named: "smt_default")!
             place.image = bgImage
         }
 

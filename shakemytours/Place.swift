@@ -17,6 +17,7 @@ class Place{
     var address : String?
     var lat: Double?
     var lng: Double?
+    var imgName : String?
     
     var keep = false
     var image : UIImage?
@@ -38,12 +39,16 @@ class Place{
             let phone = values["tel"] as? String,
             let web = values["site"] as? String,
             let lat = values["lat"] as? Double,
-            let lng = values["lgt"] as? Double
+            let lng = values["lgt"] as? Double,
+            let img = values["eventType"] as? String
         {
             let p = Place(name : name, type: type, web: web, phone: phone, address: address)
             p.lat = lat
             p.lng = lng
             p.jsonType = jsonType
+            if img != ""{
+                p.imgName = img
+            }
             return p
         }
         return nil
