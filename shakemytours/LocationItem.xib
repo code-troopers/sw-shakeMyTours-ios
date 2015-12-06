@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlaceName" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TP-gA-CJA">
-                    <rect key="frame" x="36" y="8" width="300" height="20.5"/>
+                    <rect key="frame" x="36" y="6" width="300" height="20.5"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="wW4-tH-NeF"/>
@@ -38,10 +38,10 @@
             </subviews>
             <animations/>
             <constraints>
-                <constraint firstItem="lfG-db-7vX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="6fj-T5-4dd"/>
                 <constraint firstItem="3TP-gA-CJA" firstAttribute="leading" secondItem="lfG-db-7vX" secondAttribute="trailing" constant="8" id="Atd-PU-j8T"/>
-                <constraint firstItem="3TP-gA-CJA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Hmd-Fn-iUf"/>
+                <constraint firstItem="lfG-db-7vX" firstAttribute="centerY" secondItem="3TP-gA-CJA" secondAttribute="centerY" id="UsW-J2-AAA"/>
                 <constraint firstItem="lfG-db-7vX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="cRq-Iy-6ae"/>
+                <constraint firstItem="3TP-gA-CJA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ylU-30-Ehy"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
