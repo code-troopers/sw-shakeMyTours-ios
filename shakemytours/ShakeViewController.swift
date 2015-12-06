@@ -15,14 +15,17 @@ class ShakeViewController : UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var nextBtn: UIBarButtonItem!
     var tableData : [Place]?
     let loaderService = LoaderService()
+    var blockReload = false
     
     override func viewDidLoad() {
         self.navigationController?.navigationBar.hidden = false
+        
     }
-    
     override func viewWillAppear(animated: Bool) {
-        loadData()
-        refreshTableView()
+        if !blockReload{
+            loadData()
+            refreshTableView()
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -62,7 +65,7 @@ class ShakeViewController : UIViewController, UITableViewDataSource, UITableView
     }
     
     func loadData(){
-        loaderService.loadLocalData(5, handler:self)
+        loaderService.loadLocalData(self)
     }
 }
 /* Data loader */
@@ -97,7 +100,7 @@ extension ShakeViewController{
 extension ShakeViewController{
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .Destructive, title: "Delete") { action, index in
-            self.tableData![index.section] = self.loaderService.pickOne()!
+            self.tableData![index.section] = self.loaderService.pickOne(self.tableData![index.section].jsonType!)!
             CATransaction.begin()
             CATransaction.setCompletionBlock({
                 self.tableView.reloadRowsAtIndexPaths([index], withRowAnimation: .Automatic)
@@ -140,6 +143,7 @@ extension ShakeViewController {
             where segue.identifier == "showDetailsSegue",
            let vc = segue.destinationViewController as? DetailViewController {
             vc.place = cell.place
+            blockReload = true
         }
         if let vc = segue.destinationViewController as? ActivityDetailController where segue.identifier == "showActivitySegue"{
             vc.tableData = self.tableData?.filter({$0.keep})

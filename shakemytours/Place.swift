@@ -10,33 +10,41 @@ import Foundation
 import UIKit
 
 class Place{
-    var distance : NSNumber?
     var name : String?
     var type : String?
     var web: String?
     var phone : String?
     var address : String?
+    var lat: Double?
+    var lng: Double?
     
     var keep = false
     var image : UIImage?
+    var jsonType : JsonType?
     
-    init(name : String, distance : NSNumber, type: String, web: String, phone: String, address: String){
+    init(name : String, type: String, web: String, phone: String, address: String){
         self.name = name
         self.type = type
-        self.distance = distance
         self.address = address
         self.web = web
         self.phone = phone
     }
     
-    static func fromJSON(values : NSDictionary) -> Place?{
-        if let distance = values["distance"] as? NSNumber,
+    static func fromJSON(values : NSDictionary, jsonType: JsonType) -> Place?{
+        if
             let name = values["name"] as? String,
             let type = values["type"] as? String,
             let address = values["address"] as? String,
-            let phone = values["phone"] as? String,
-            let web = values["web"] as? String {
-            return Place(name : name, distance: distance, type: type, web: web, phone: phone, address: address)
+            let phone = values["tel"] as? String,
+            let web = values["site"] as? String,
+            let lat = values["lat"] as? Double,
+            let lng = values["lgt"] as? Double
+        {
+            let p = Place(name : name, type: type, web: web, phone: phone, address: address)
+            p.lat = lat
+            p.lng = lng
+            p.jsonType = jsonType
+            return p
         }
         return nil
     }

@@ -49,8 +49,9 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
     }
     
     func drawItinerary(){
-        var coords2D = fakeCoords
-            .map({CLLocationCoordinate2D(latitude: $0.0, longitude: $0.1)})
+        var coords2D = tableData!
+            .filter({$0.lat != nil && $0.lng != nil})
+            .map({CLLocationCoordinate2D(latitude: $0.lat!, longitude: $0.lng!)})
         coords2D
             .map({
                 let annot = MKPointAnnotation()
@@ -61,8 +62,10 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
             mapView.addAnnotation(annot)
         })
         let lastIndex = coords2D.count - 2
-        for i in 0...lastIndex{
-            drawRoute(start: coords2D[i], arrival: coords2D[i+1])
+        if lastIndex > 0{
+            for i in 0...lastIndex{
+                drawRoute(start: coords2D[i], arrival: coords2D[i+1])
+            }
         }
         let centerRegion = centerMapOnRegion(&coords2D)
         dispatch_async(dispatch_get_main_queue(), {

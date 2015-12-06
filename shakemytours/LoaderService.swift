@@ -10,8 +10,8 @@ import Foundation
 
 class LoaderService{
     
-    private func loadFromJson(amountToLoad : Int) -> [Place]?{
-        if let path = NSBundle.mainBundle().pathForResource("mockdata", ofType: "json"){
+    private func loadFromJson(amountToLoad : Int, type: JsonType) -> [Place]?{
+        if let path = NSBundle.mainBundle().pathForResource(JsonType.fileName(type), ofType: "json"){
             do{
                 let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
                 if let jsonValues = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as? NSArray {
@@ -19,7 +19,7 @@ class LoaderService{
                     for _ in 1...amountToLoad{
                         let randomIndex = Int(arc4random_uniform(UInt32(jsonValues.count)))
                         if let place = jsonValues[randomIndex] as? NSDictionary {
-                            if let p = Place.fromJSON(place){
+                            if let p = Place.fromJSON(place, jsonType: type){
                                 out.append(p)
                             }
                         }
@@ -33,17 +33,35 @@ class LoaderService{
         return nil
     }
  
-    func loadLocalData(amountToLoad : Int, handler:  PlaceHandler){
-        if let places = loadFromJson(amountToLoad){
-            handler.handlePlaces(places)
+    func loadLocalData(handler:  PlaceHandler){
+        if let activities = loadFromJson(2, type: .ACTIVITY),
+            let restaurant = loadFromJson(1, type: .RESTAURANT),
+            let pmAct = loadFromJson(1, type: .ACTIVITY),
+            let night = loadFromJson(1, type: .NIGHT){
+                let val = [activities, restaurant, pmAct, night].reduce([], combine: +)
+                handler.handlePlaces(val)
         }
     }
     
-    func pickOne() -> Place?{
-        return loadFromJson(1)?[0]
+    func pickOne(jsonType: JsonType) -> Place?{
+        return loadFromJson(1, type: jsonType)?[0]
     }
 }
 
 protocol PlaceHandler{
     func handlePlaces(places : [Place])
+}
+
+enum JsonType {
+    case ACTIVITY
+    case NIGHT
+    case RESTAURANT
+    
+    static func fileName(type: JsonType) -> String{
+        switch type{
+        case .ACTIVITY : return "activity"
+        case .RESTAURANT : return "restaurant"
+        case .NIGHT : return "night"
+        }
+    }
 }
