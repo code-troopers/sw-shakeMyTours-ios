@@ -146,7 +146,7 @@ extension ShakeViewController {
             blockReload = true
         }
         if let vc = segue.destinationViewController as? ActivityDetailController where segue.identifier == "showActivitySegue"{
-            vc.tableData = self.tableData?.filter({$0.keep})
+            vc.tableData = PlaceWithColors.hydrate(self.tableData?.filter({$0.keep}))
         }
         if let vc = segue.destinationViewController as? LoadingController where segue.identifier == "showLoadingModalSegue" {
             vc.dismiss = true

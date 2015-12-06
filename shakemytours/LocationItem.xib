@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationItem" customModule="shakemytours">
             <connections>
+                <outlet property="pinLegend" destination="lfG-db-7vX" id="f3M-8e-z6x"/>
                 <outlet property="placeName" destination="3TP-gA-CJA" id="wHz-sZ-EH7"/>
             </connections>
         </placeholder>
@@ -15,15 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydb-RZ-v8C">
-                    <rect key="frame" x="8" y="8" width="22" height="20.5"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlaceName" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TP-gA-CJA">
-                    <rect key="frame" x="38" y="8" width="300" height="20.5"/>
+                    <rect key="frame" x="36" y="8" width="300" height="20.5"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="wW4-tH-NeF"/>
@@ -32,13 +26,22 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfG-db-7vX">
+                    <rect key="frame" x="4" y="4" width="24" height="24"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="1Ib-hH-hcb"/>
+                        <constraint firstAttribute="height" constant="24" id="WAw-ZD-O8A"/>
+                    </constraints>
+                </view>
             </subviews>
             <animations/>
             <constraints>
+                <constraint firstItem="lfG-db-7vX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="6fj-T5-4dd"/>
+                <constraint firstItem="3TP-gA-CJA" firstAttribute="leading" secondItem="lfG-db-7vX" secondAttribute="trailing" constant="8" id="Atd-PU-j8T"/>
                 <constraint firstItem="3TP-gA-CJA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Hmd-Fn-iUf"/>
-                <constraint firstItem="3TP-gA-CJA" firstAttribute="leading" secondItem="ydb-RZ-v8C" secondAttribute="trailing" constant="8" id="OOX-ns-UyA"/>
-                <constraint firstItem="ydb-RZ-v8C" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="cNh-eG-bbV"/>
-                <constraint firstItem="3TP-gA-CJA" firstAttribute="top" secondItem="ydb-RZ-v8C" secondAttribute="top" id="tfg-JT-Y89"/>
+                <constraint firstItem="lfG-db-7vX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="cRq-Iy-6ae"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

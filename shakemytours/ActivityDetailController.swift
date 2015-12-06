@@ -13,7 +13,7 @@ import MapKit
 class ActivityDetailController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
-    var tableData : [Place]?
+    var tableData : [PlaceWithColors]?
     
     override func viewDidLoad() {
         drawItinerary()
@@ -30,7 +30,7 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func shareButtonClick(sender: UIBarButtonItem) {
-        let names = tableData!.map({$0.name!}).joinWithSeparator(" → ")
+        let names = tableData!.map({$0.place.name!}).joinWithSeparator(" → ")
         let textToShare = "This is a great shake (\(names)), SHAKE it out !"
         
         if let myWebsite = NSURL(string: "http://shakemytours.com/"){
@@ -44,18 +44,21 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
     }
     
     func drawItinerary(){
-        var coords2D = tableData!
-            .filter({$0.lat != nil && $0.lng != nil})
-            .map({CLLocationCoordinate2D(latitude: $0.lat!, longitude: $0.lng!)})
-        coords2D
+        tableData!
+            .filter({$0.location != nil})
             .map({
-                let annot = MKPointAnnotation()
-                annot.coordinate = $0
+                let annot = PlaceAnnotation()
+                annot.coordinate = $0.location!
+                annot.pinColor = $0.pinColor
                 return annot
             })
             .forEach({annot -> Void in
             mapView.addAnnotation(annot)
         })
+        
+        var coords2D = tableData!
+            .filter({$0.location != nil})
+            .map({$0.location!})
         let lastIndex = coords2D.count - 2
         if lastIndex >= 0{
             for i in 0...lastIndex{
@@ -111,6 +114,27 @@ extension ActivityDetailController : MKMapViewDelegate{
         })
     }
     
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?    {
+        if let annotation = annotation as? PlaceAnnotation
+        {
+            let identifier = "placePin"
+            var view = MKPinAnnotationView()
+            
+            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as! MKPinAnnotationView!
+            {
+                view = dequeuedView
+                view.annotation = annotation
+            }
+            else
+            {
+                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view.pinTintColor = annotation.pinColor
+            }
+            return view
+        }
+        return nil
+    }
+    
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer{
         let polylineRenderer = MKPolylineRenderer(overlay: overlay)
         if overlay is MKPolyline {
@@ -125,4 +149,35 @@ extension ActivityDetailController : MKMapViewDelegate{
         mapView.delegate = nil
     }
 
+}
+
+class PlaceWithColors {
+    var pinColor : UIColor
+    var place: Place
+    var location : CLLocationCoordinate2D?
+    
+    init(place: Place, pinColor : UIColor){
+        self.place = place
+        self.pinColor = pinColor
+        if let lat = place.lat,
+            let lng = place.lng{
+                self.location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        }
+    }
+    
+    static func hydrate(optPlaces: [Place]?) -> [PlaceWithColors]?{
+        if let places = optPlaces {
+            var colors = [UIColor.greenColor(), UIColor.redColor(), UIColor.blueColor(), UIColor.yellowColor(), UIColor.purpleColor()]
+            var out = [PlaceWithColors]()
+            for (i,p) in places.enumerate(){
+                out.append(PlaceWithColors(place: p, pinColor: colors[i % colors.count]))
+            }
+            return out
+        }
+        return nil
+    }
+}
+
+class PlaceAnnotation : MKPointAnnotation{
+    var pinColor : UIColor!
 }

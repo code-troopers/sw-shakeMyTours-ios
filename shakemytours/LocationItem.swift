@@ -12,6 +12,7 @@ import UIKit
 class LocationItem: UIView{
 
     @IBOutlet weak var placeName : UILabel!
+    @IBOutlet weak var pinLegend: UIView!
     // Our custom view from the XIB file
     var view: UIView!
     
@@ -39,6 +40,7 @@ class LocationItem: UIView{
         view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         // Adding custom subview on top of our view (over any custom drawing > see note below)
         addSubview(view)
+        pinLegend.layer.cornerRadius = pinLegend.frame.height / 2
     }
     
     func loadViewFromNib() -> UIView {
@@ -50,7 +52,8 @@ class LocationItem: UIView{
         return view
     }
     
-    func updateView(place : Place){
-        placeName!.text = place.name
+    func updateView(placeWithColors : PlaceWithColors){
+        placeName!.text = placeWithColors.place.name
+        pinLegend.layer.backgroundColor = placeWithColors.pinColor.CGColor
     }
 }

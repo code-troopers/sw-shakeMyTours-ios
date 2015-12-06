@@ -12,7 +12,7 @@ import UIKit
 class LocationCellItem : UITableViewCell{
     @IBOutlet weak var locationItem: LocationItem!
     
-    func setPlaceInfo(place: Place){
-        locationItem.updateView(place)
+    func setPlaceInfo(placeWithColors: PlaceWithColors){
+        locationItem.updateView(placeWithColors)
     }
 }
