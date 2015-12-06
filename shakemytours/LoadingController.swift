@@ -13,6 +13,7 @@ class LoadingController : UIViewController{
  
     @IBOutlet weak var phonePicture: UIImageView!
     @IBOutlet weak var shakeLbl: UILabel!
+    var dismiss = false
     override func viewDidAppear(animated: Bool) {
         shakeView()
         shakeLbl.fadeIn()
@@ -22,11 +23,16 @@ class LoadingController : UIViewController{
     }
     
     func showResults(){
-        let vc = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewControllerWithIdentifier("MainNavigationController")
-            as! UINavigationController
+        if dismiss{
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewControllerWithIdentifier("MainNavigationController")
+                as! UINavigationController
 
-        self.presentViewController(vc, animated: true, completion: nil)
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+        dismiss = false
     }
     
     func shakeView(){

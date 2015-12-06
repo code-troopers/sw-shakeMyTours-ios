@@ -18,7 +18,11 @@ class ShakeViewController : UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         self.navigationController?.navigationBar.hidden = false
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         loadData()
+        refreshTableView()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -75,7 +79,6 @@ extension ShakeViewController : PlaceHandler{
         }else{
             tableData = places
         }
-
     }
 
 }
@@ -85,11 +88,7 @@ extension ShakeViewController{
         withEvent event: UIEvent?) {
             
             if motion == .MotionShake{
-                let vc = UIStoryboard(name: "Main", bundle: nil)
-                    .instantiateViewControllerWithIdentifier("LoadingController")
-                    as! LoadingController
-                
-                self.presentViewController(vc, animated: true, completion: nil)
+                performSegueWithIdentifier("showLoadingModalSegue", sender: self)
             }
     }
 }
@@ -144,6 +143,9 @@ extension ShakeViewController {
         }
         if let vc = segue.destinationViewController as? ActivityDetailController where segue.identifier == "showActivitySegue"{
             vc.tableData = self.tableData?.filter({$0.keep})
+        }
+        if let vc = segue.destinationViewController as? LoadingController where segue.identifier == "showLoadingModalSegue" {
+            vc.dismiss = true
         }
     }
 }
