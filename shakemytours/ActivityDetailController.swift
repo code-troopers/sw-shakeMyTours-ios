@@ -119,5 +119,10 @@ extension ActivityDetailController : MKMapViewDelegate{
         }
         return polylineRenderer
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.delegate = nil
+    }
 
 }
