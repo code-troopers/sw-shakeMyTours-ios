@@ -38,7 +38,7 @@
                 <constraint firstItem="3TP-gA-CJA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Hmd-Fn-iUf"/>
                 <constraint firstItem="3TP-gA-CJA" firstAttribute="leading" secondItem="ydb-RZ-v8C" secondAttribute="trailing" constant="8" id="OOX-ns-UyA"/>
                 <constraint firstItem="ydb-RZ-v8C" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="cNh-eG-bbV"/>
-                <constraint firstItem="3TP-gA-CJA" firstAttribute="baseline" secondItem="ydb-RZ-v8C" secondAttribute="baseline" id="tfg-JT-Y89"/>
+                <constraint firstItem="3TP-gA-CJA" firstAttribute="top" secondItem="ydb-RZ-v8C" secondAttribute="top" id="tfg-JT-Y89"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
