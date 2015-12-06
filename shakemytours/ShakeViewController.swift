@@ -98,7 +98,7 @@ extension ShakeViewController{
 extension ShakeViewController{
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .Destructive, title: "Delete") { action, index in
-            self.tableData![index.row] = self.loaderService.pickOne()!
+            self.tableData![index.section] = self.loaderService.pickOne()!
             CATransaction.begin()
             CATransaction.setCompletionBlock({
                 self.tableView.reloadRowsAtIndexPaths([index], withRowAnimation: .Automatic)
