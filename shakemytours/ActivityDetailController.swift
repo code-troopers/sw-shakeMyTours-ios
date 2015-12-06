@@ -14,6 +14,7 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
     var tableData : [PlaceWithColors]?
+    var selectedPlace : Place?
     
     override func viewDidLoad() {
         drawItinerary()
@@ -29,10 +30,16 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
         return tableData?.count ?? 0
     }
     
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let center = tableData![indexPath.row].location{
             mapView.setCenterCoordinate(center, animated: true)
         }
+    }
+
+    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        selectedPlace = tableData![indexPath.row].place
+        performSegueWithIdentifier("showDetailsSegue", sender: self)
     }
     
     @IBAction func shareButtonClick(sender: UIBarButtonItem) {
@@ -46,6 +53,13 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
             activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
             
             self.presentViewController(activityVC, animated: true, completion: nil)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? DetailViewController
+            where segue.identifier == "showDetailsSegue"{
+                vc.place = selectedPlace
         }
     }
     

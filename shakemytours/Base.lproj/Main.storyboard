@@ -156,18 +156,18 @@
                         <viewControllerLayoutGuide type="bottom" id="YZs-Zc-Zav"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="r3U-1d-qzj">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lake" translatesAutoresizingMaskIntoConstraints="NO" id="hZl-sx-ja6">
-                                <rect key="frame" x="0.0" y="-4" width="375" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="lake" translatesAutoresizingMaskIntoConstraints="NO" id="hZl-sx-ja6">
+                                <rect key="frame" x="4" y="-4" width="592" height="128"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="TF1-do-5bP"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrs-s0-1GK" userLabel="Location card" customClass="CardView" customModule="shakemytours" customModuleProvider="target">
-                                <rect key="frame" x="16" y="132" width="343" height="96"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrs-s0-1GK" userLabel="Location card" customClass="CardView" customModule="shakemytours" customModuleProvider="target">
+                                <rect key="frame" x="20" y="132" width="560" height="96"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="13 rue des Historiens, 37000 Tours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWx-hX-XuH">
                                         <rect key="frame" x="38" y="8" width="267.5" height="20.5"/>
@@ -251,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7bu-B4-aVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938.5" y="10.5"/>
+            <point key="canvasLocation" x="2210" y="-82"/>
         </scene>
         <!--Loading Controller-->
         <scene sceneID="UpK-fb-4cZ">
@@ -326,11 +326,11 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" id="HI8-Ec-Fbf" customClass="LocationCellItem" customModule="shakemytours" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" id="HI8-Ec-Fbf" customClass="LocationCellItem" customModule="shakemytours" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="592" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HI8-Ec-Fbf" id="qZl-ZF-mL7">
-                                            <rect key="frame" x="0.0" y="0.0" width="559" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="545" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1b3-eW-mD7" customClass="LocationItem" customModule="shakemytours" customModuleProvider="target">
@@ -350,6 +350,7 @@
                                         <animations/>
                                         <connections>
                                             <outlet property="locationItem" destination="1b3-eW-mD7" id="qyR-oI-hjG"/>
+                                            <segue destination="Wqq-9q-XJ2" kind="show" identifier="showDetailsSegue" trigger="accessoryAction" id="Yhy-LW-GnQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -414,7 +415,7 @@
         <image name="phone" width="104" height="220"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3sa-SY-32c"/>
+        <segue reference="Yhy-LW-GnQ"/>
         <segue reference="ANc-In-R21"/>
     </inferredMetricsTieBreakers>
 </document>
