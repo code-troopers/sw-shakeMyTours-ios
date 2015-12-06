@@ -18,6 +18,7 @@
 		7B86FF971C13B8CE003CF5CB /* activity.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B86FF941C13B8CE003CF5CB /* activity.json */; };
 		7B86FF981C13B8CE003CF5CB /* night.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B86FF951C13B8CE003CF5CB /* night.json */; };
 		7B86FF991C13B8CE003CF5CB /* restaurant.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B86FF961C13B8CE003CF5CB /* restaurant.json */; };
+		7B86FF9B1C13C67A003CF5CB /* bonus.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B86FF9A1C13C67A003CF5CB /* bonus.json */; };
 		7BA076071C124B670070C03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA076061C124B670070C03D /* AppDelegate.swift */; };
 		7BA0760B1C124B670070C03D /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0760A1C124B670070C03D /* DataViewController.swift */; };
 		7BA076101C124B670070C03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA0760E1C124B670070C03D /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		7B86FF941C13B8CE003CF5CB /* activity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activity.json; sourceTree = "<group>"; };
 		7B86FF951C13B8CE003CF5CB /* night.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = night.json; sourceTree = "<group>"; };
 		7B86FF961C13B8CE003CF5CB /* restaurant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurant.json; sourceTree = "<group>"; };
+		7B86FF9A1C13C67A003CF5CB /* bonus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bonus.json; sourceTree = "<group>"; };
 		7BA076031C124B670070C03D /* shakemytours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shakemytours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA076061C124B670070C03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA0760A1C124B670070C03D /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				7B86FF941C13B8CE003CF5CB /* activity.json */,
 				7B86FF951C13B8CE003CF5CB /* night.json */,
+				7B86FF9A1C13C67A003CF5CB /* bonus.json */,
 				7B86FF961C13B8CE003CF5CB /* restaurant.json */,
 				7B6A432A1C13365500E4DACE /* ActivityDetailController.swift */,
 				7BA076061C124B670070C03D /* AppDelegate.swift */,
@@ -186,6 +189,7 @@
 				7B86FF971C13B8CE003CF5CB /* activity.json in Resources */,
 				7BA076271C125F140070C03D /* ShakeItem.xib in Resources */,
 				7BA076151C124B670070C03D /* LaunchScreen.storyboard in Resources */,
+				7B86FF9B1C13C67A003CF5CB /* bonus.json in Resources */,
 				7B86FF981C13B8CE003CF5CB /* night.json in Resources */,
 				7BA076121C124B670070C03D /* Assets.xcassets in Resources */,
 				7BA076101C124B670070C03D /* Main.storyboard in Resources */,

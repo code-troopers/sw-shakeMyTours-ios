@@ -11,11 +11,6 @@ import UIKit
 import MapKit
 
 class ActivityDetailController : UIViewController, UITableViewDelegate, UITableViewDataSource{
-    let fakeCoords = [
-        (47.366353, 0.677934),
-        (47.412582, 0.68545),
-        (47.421142, 0.700384)
-        ]
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
     var tableData : [Place]?
@@ -62,7 +57,7 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
             mapView.addAnnotation(annot)
         })
         let lastIndex = coords2D.count - 2
-        if lastIndex > 0{
+        if lastIndex >= 0{
             for i in 0...lastIndex{
                 drawRoute(start: coords2D[i], arrival: coords2D[i+1])
             }
@@ -72,9 +67,10 @@ class ActivityDetailController : UIViewController, UITableViewDelegate, UITableV
             UIView.animateWithDuration(2, animations: {
                 () -> Void in
                 let rect = MKCoordinateRegionForMapRect(centerRegion)
-                self.mapView.setRegion( MKCoordinateRegionMake(rect.center,
-                    MKCoordinateSpan(latitudeDelta: rect.span.latitudeDelta + 0.05,
-                        longitudeDelta: rect.span.longitudeDelta+0.05)
+                let centerCoord = coords2D.count == 1 ? coords2D[0] : rect.center
+                self.mapView.setRegion( MKCoordinateRegionMake(centerCoord,
+                    MKCoordinateSpan(latitudeDelta: rect.span.latitudeDelta,
+                        longitudeDelta: rect.span.longitudeDelta)
                     ),
                     animated: true)
             })
