@@ -9,8 +9,13 @@
 import UIKit
 
 class DataViewController: UIViewController {
+    var pageIndex : Int!
+    var city: JsonCity!
+    @IBOutlet weak var cityLabel: UILabel!
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        cityLabel.text = city.name()
         self.navigationController?.navigationBar.hidden = true
     }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B6246281C57952B00A7C9F2 /* SelectTownPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6246271C57952B00A7C9F2 /* SelectTownPageViewController.swift */; };
 		7B6A43271C131B1D00E4DACE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6A43261C131B1D00E4DACE /* CardView.swift */; };
 		7B6A43291C13272B00E4DACE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6A43281C13272B00E4DACE /* DetailViewController.swift */; };
 		7B6A432B1C13365500E4DACE /* ActivityDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6A432A1C13365500E4DACE /* ActivityDetailController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B6246271C57952B00A7C9F2 /* SelectTownPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTownPageViewController.swift; sourceTree = "<group>"; };
 		7B6A43261C131B1D00E4DACE /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7B6A43281C13272B00E4DACE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7B6A432A1C13365500E4DACE /* ActivityDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				7BBE57F01C12F475005A29CE /* UIExtensions.swift */,
 				7B6A43301C1339B000E4DACE /* LocationCellItem.swift */,
 				7B6A43341C133F7700E4DACE /* LoadingController.swift */,
+				7B6246271C57952B00A7C9F2 /* SelectTownPageViewController.swift */,
 			);
 			path = shakemytours;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				7BA076291C125F240070C03D /* ShakeItem.swift in Sources */,
 				7BBE57F11C12F475005A29CE /* UIExtensions.swift in Sources */,
 				7BA0761F1C1257DA0070C03D /* LoaderService.swift in Sources */,
+				7B6246281C57952B00A7C9F2 /* SelectTownPageViewController.swift in Sources */,
 				7BA0760B1C124B670070C03D /* DataViewController.swift in Sources */,
 				7BA076251C125A970070C03D /* Place.swift in Sources */,
 				7B6A43351C133F7700E4DACE /* LoadingController.swift in Sources */,

@@ -10,8 +10,8 @@ import Foundation
 
 class LoaderService{
     
-    private func loadFromJson(amountToLoad : Int, type: JsonType, city: JsonCity) -> [Place]?{
-        if let path = NSBundle.mainBundle().pathForResource(city.prefix()+"_"+JsonType.fileName(type), ofType: "json"){
+    private func loadFromJson(amountToLoad : Int, type: JsonType) -> [Place]?{
+        if let path = NSBundle.mainBundle().pathForResource(AppDelegate.get().city.prefix()+"_"+JsonType.fileName(type), ofType: "json"){
             do{
                 let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
                 if let jsonValues = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as? NSArray {
@@ -33,14 +33,14 @@ class LoaderService{
         return nil
     }
  
-    func loadLocalData(handler:  PlaceHandler, city: JsonCity){
+    func loadLocalData(handler:  PlaceHandler){
         
         if
             //let bonus = loadFromJson(1, type: .BONUS),
-            let amActivity = loadFromJson(1, type: .ACTIVITY, city: city),
-            let restaurant = loadFromJson(1, type: .RESTAURANT, city: city),
-            let pmAct = loadFromJson(2, type: .ACTIVITY, city: city),
-            let night = loadFromJson(1, type: .NIGHT, city: city){
+            let amActivity = loadFromJson(1, type: .ACTIVITY),
+            let restaurant = loadFromJson(1, type: .RESTAURANT),
+            let pmAct = loadFromJson(2, type: .ACTIVITY),
+            let night = loadFromJson(1, type: .NIGHT){
                 let val = [
                     //bonus,
                     amActivity, restaurant, pmAct, night].reduce([], combine: +)
@@ -48,8 +48,8 @@ class LoaderService{
         }
     }
     
-    func pickOne(jsonType: JsonType, city: JsonCity) -> Place?{
-        return loadFromJson(1, type: jsonType, city: city)?[0]
+    func pickOne(jsonType: JsonType) -> Place?{
+        return loadFromJson(1, type: jsonType)?[0]
     }
 }
 
@@ -63,6 +63,13 @@ enum JsonCity{
         switch self{
         case .Orleans: return "orleans"
         case .Tours: return "tours"
+        }
+    }
+    
+    func name() -> String{
+        switch self{
+        case .Orleans: return "Orléans"
+        case .Tours: return "Tours"
         }
     }
 }
