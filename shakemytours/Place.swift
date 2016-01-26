@@ -34,7 +34,6 @@ class Place{
     static func fromJSON(values : NSDictionary, jsonType: JsonType) -> Place?{
         if
             let name = values["name"] as? String,
-            let type = values["type"] as? String,
             let address = values["address"] as? String,
             let phone = values["tel"] as? String,
             let web = values["site"] as? String,
@@ -42,6 +41,7 @@ class Place{
             let lng = values["lgt"] as? Double,
             let img = values["eventType"] as? String
         {
+            let type = values["type"] as? String ?? img
             let p = Place(name : name, type: type, web: web, phone: phone, address: address)
             p.lat = lat
             p.lng = lng

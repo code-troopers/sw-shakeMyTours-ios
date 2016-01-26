@@ -15,9 +15,9 @@
 		7B6A43311C1339B000E4DACE /* LocationCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6A43301C1339B000E4DACE /* LocationCellItem.swift */; };
 		7B6A43331C133AE000E4DACE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6A43321C133AE000E4DACE /* MapKit.framework */; };
 		7B6A43351C133F7700E4DACE /* LoadingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6A43341C133F7700E4DACE /* LoadingController.swift */; };
-		7B86FF971C13B8CE003CF5CB /* activity.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B86FF941C13B8CE003CF5CB /* activity.json */; };
-		7B86FF981C13B8CE003CF5CB /* night.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B86FF951C13B8CE003CF5CB /* night.json */; };
-		7B86FF991C13B8CE003CF5CB /* restaurant.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B86FF961C13B8CE003CF5CB /* restaurant.json */; };
+		7B86FF971C13B8CE003CF5CB /* tours_activity.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B86FF941C13B8CE003CF5CB /* tours_activity.json */; };
+		7B86FF981C13B8CE003CF5CB /* tours_night.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B86FF951C13B8CE003CF5CB /* tours_night.json */; };
+		7B86FF991C13B8CE003CF5CB /* tours_restaurant.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B86FF961C13B8CE003CF5CB /* tours_restaurant.json */; };
 		7B86FF9B1C13C67A003CF5CB /* bonus.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B86FF9A1C13C67A003CF5CB /* bonus.json */; };
 		7BA076071C124B670070C03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA076061C124B670070C03D /* AppDelegate.swift */; };
 		7BA0760B1C124B670070C03D /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0760A1C124B670070C03D /* DataViewController.swift */; };
@@ -30,6 +30,9 @@
 		7BA076271C125F140070C03D /* ShakeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA076261C125F140070C03D /* ShakeItem.xib */; };
 		7BA076291C125F240070C03D /* ShakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA076281C125F240070C03D /* ShakeItem.swift */; };
 		7BBE57F11C12F475005A29CE /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE57F01C12F475005A29CE /* UIExtensions.swift */; };
+		7BBFD54D1C574AB000C6E943 /* orleans_activity.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BBFD54A1C574AB000C6E943 /* orleans_activity.json */; };
+		7BBFD54E1C574AB000C6E943 /* orleans_night.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BBFD54B1C574AB000C6E943 /* orleans_night.json */; };
+		7BBFD54F1C574AB000C6E943 /* orleans_restaurant.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BBFD54C1C574AB000C6E943 /* orleans_restaurant.json */; };
 		7BE3E5BC1C12DD46007C3211 /* ShakeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3E5BB1C12DD46007C3211 /* ShakeCellItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,9 +45,9 @@
 		7B6A43301C1339B000E4DACE /* LocationCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCellItem.swift; sourceTree = "<group>"; };
 		7B6A43321C133AE000E4DACE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7B6A43341C133F7700E4DACE /* LoadingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingController.swift; sourceTree = "<group>"; };
-		7B86FF941C13B8CE003CF5CB /* activity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activity.json; sourceTree = "<group>"; };
-		7B86FF951C13B8CE003CF5CB /* night.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = night.json; sourceTree = "<group>"; };
-		7B86FF961C13B8CE003CF5CB /* restaurant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurant.json; sourceTree = "<group>"; };
+		7B86FF941C13B8CE003CF5CB /* tours_activity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tours_activity.json; sourceTree = "<group>"; };
+		7B86FF951C13B8CE003CF5CB /* tours_night.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tours_night.json; sourceTree = "<group>"; };
+		7B86FF961C13B8CE003CF5CB /* tours_restaurant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tours_restaurant.json; sourceTree = "<group>"; };
 		7B86FF9A1C13C67A003CF5CB /* bonus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bonus.json; sourceTree = "<group>"; };
 		7BA076031C124B670070C03D /* shakemytours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shakemytours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA076061C124B670070C03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +62,9 @@
 		7BA076261C125F140070C03D /* ShakeItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShakeItem.xib; sourceTree = "<group>"; };
 		7BA076281C125F240070C03D /* ShakeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeItem.swift; sourceTree = "<group>"; };
 		7BBE57F01C12F475005A29CE /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		7BBFD54A1C574AB000C6E943 /* orleans_activity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orleans_activity.json; sourceTree = "<group>"; };
+		7BBFD54B1C574AB000C6E943 /* orleans_night.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orleans_night.json; sourceTree = "<group>"; };
+		7BBFD54C1C574AB000C6E943 /* orleans_restaurant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orleans_restaurant.json; sourceTree = "<group>"; };
 		7BE3E5BB1C12DD46007C3211 /* ShakeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeCellItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,10 +100,13 @@
 		7BA076051C124B670070C03D /* shakemytours */ = {
 			isa = PBXGroup;
 			children = (
-				7B86FF941C13B8CE003CF5CB /* activity.json */,
-				7B86FF951C13B8CE003CF5CB /* night.json */,
+				7BBFD54A1C574AB000C6E943 /* orleans_activity.json */,
+				7BBFD54B1C574AB000C6E943 /* orleans_night.json */,
+				7BBFD54C1C574AB000C6E943 /* orleans_restaurant.json */,
+				7B86FF941C13B8CE003CF5CB /* tours_activity.json */,
+				7B86FF951C13B8CE003CF5CB /* tours_night.json */,
 				7B86FF9A1C13C67A003CF5CB /* bonus.json */,
-				7B86FF961C13B8CE003CF5CB /* restaurant.json */,
+				7B86FF961C13B8CE003CF5CB /* tours_restaurant.json */,
 				7B6A432A1C13365500E4DACE /* ActivityDetailController.swift */,
 				7BA076061C124B670070C03D /* AppDelegate.swift */,
 				7BA076111C124B670070C03D /* Assets.xcassets */,
@@ -186,15 +195,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B86FF971C13B8CE003CF5CB /* activity.json in Resources */,
+				7BBFD54E1C574AB000C6E943 /* orleans_night.json in Resources */,
+				7B86FF971C13B8CE003CF5CB /* tours_activity.json in Resources */,
 				7BA076271C125F140070C03D /* ShakeItem.xib in Resources */,
 				7BA076151C124B670070C03D /* LaunchScreen.storyboard in Resources */,
 				7B86FF9B1C13C67A003CF5CB /* bonus.json in Resources */,
-				7B86FF981C13B8CE003CF5CB /* night.json in Resources */,
+				7BBFD54F1C574AB000C6E943 /* orleans_restaurant.json in Resources */,
+				7B86FF981C13B8CE003CF5CB /* tours_night.json in Resources */,
 				7BA076121C124B670070C03D /* Assets.xcassets in Resources */,
 				7BA076101C124B670070C03D /* Main.storyboard in Resources */,
-				7B86FF991C13B8CE003CF5CB /* restaurant.json in Resources */,
+				7B86FF991C13B8CE003CF5CB /* tours_restaurant.json in Resources */,
 				7B6A432D1C13372900E4DACE /* LocationItem.xib in Resources */,
+				7BBFD54D1C574AB000C6E943 /* orleans_activity.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

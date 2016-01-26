@@ -16,13 +16,14 @@ class ShakeViewController : UIViewController, UITableViewDataSource, UITableView
     var tableData : [Place]?
     let loaderService = LoaderService()
     var blockReload = false
+    var city : JsonCity!
     
     override func viewDidLoad() {
         self.navigationController?.navigationBar.hidden = false
-        
     }
     override func viewWillAppear(animated: Bool) {
         if !blockReload{
+            city = .Orleans
             loadData()
             refreshTableView()
         }
@@ -65,7 +66,7 @@ class ShakeViewController : UIViewController, UITableViewDataSource, UITableView
     }
     
     func loadData(){
-        loaderService.loadLocalData(self)
+        loaderService.loadLocalData(self, city: city)
     }
 }
 /* Data loader */
@@ -100,7 +101,7 @@ extension ShakeViewController{
 extension ShakeViewController{
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .Destructive, title: "Delete") { action, index in
-            self.tableData![index.section] = self.loaderService.pickOne(self.tableData![index.section].jsonType!)!
+            self.tableData![index.section] = self.loaderService.pickOne(self.tableData![index.section].jsonType!, city: self.city)!
             CATransaction.begin()
             CATransaction.setCompletionBlock({
                 self.tableView.reloadRowsAtIndexPaths([index], withRowAnimation: .Automatic)
