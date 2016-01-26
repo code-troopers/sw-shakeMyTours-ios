@@ -72,6 +72,13 @@ enum JsonCity{
         case .Tours: return "Tours"
         }
     }
+    
+    func cycle() -> JsonCity{
+        switch self{
+            case .Tours : return  .Orleans;
+            case .Orleans: return  .Tours;
+        }
+    }
 }
 enum JsonType {
     case ACTIVITY

@@ -143,6 +143,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Votre shake" id="KnO-af-OGF">
+                        <barButtonItem key="leftBarButtonItem" title="City" id="z37-gQ-PZR">
+                            <connections>
+                                <action selector="onChangeCity:" destination="aaC-6o-gHc" id="Aj0-rr-9dU"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Select" id="Cb7-gN-RxR">
                             <connections>
                                 <segue destination="5ce-wt-SuL" kind="show" identifier="showActivitySegue" id="mzw-2f-g59"/>
@@ -309,11 +314,11 @@
                         <viewControllerLayoutGuide type="bottom" id="PdX-te-b0T"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Mxx-Yw-pmM">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9D2-Xg-7BX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9D2-Xg-7BX">
+                                <rect key="frame" x="4" y="0.0" width="592" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="256" id="ecV-2q-dJL"/>
                                 </constraints>
@@ -321,15 +326,15 @@
                                     <outlet property="delegate" destination="5ce-wt-SuL" id="2Mc-XJ-aDe"/>
                                 </connections>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LkC-jF-ARH">
-                                <rect key="frame" x="0.0" y="256" width="375" height="303"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LkC-jF-ARH">
+                                <rect key="frame" x="4" y="256" width="592" height="303"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" id="HI8-Ec-Fbf" customClass="LocationCellItem" customModule="shakemytours" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="28" width="592" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HI8-Ec-Fbf" id="qZl-ZF-mL7">
-                                            <rect key="frame" x="0.0" y="0.0" width="328" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="545" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1b3-eW-mD7" customClass="LocationItem" customModule="shakemytours" customModuleProvider="target">
@@ -409,7 +414,7 @@
         <image name="phone" width="104" height="220"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bS4-xA-iT2"/>
-        <segue reference="Yhy-LW-GnQ"/>
+        <segue reference="ANc-In-R21"/>
+        <segue reference="jB0-Ep-yuv"/>
     </inferredMetricsTieBreakers>
 </document>

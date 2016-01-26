@@ -28,6 +28,13 @@ class ShakeViewController : UIViewController, UITableViewDataSource, UITableView
         self.title = "Votre shake à \(AppDelegate.get().city.name())"
     }
     
+    @IBAction func onChangeCity(sender: AnyObject) {
+        AppDelegate.get().city = AppDelegate.get().city.cycle()
+//        self.title = "Votre shake à \(AppDelegate.get().city.name())"
+        tableData = nil
+        performSegueWithIdentifier("showLoadingModalSegue", sender: self)
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return tableData?.count ?? 0
     }
